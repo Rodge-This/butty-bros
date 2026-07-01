@@ -1,0 +1,6 @@
+# Butty Bros — robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.buttybros.co.uk/sitemap.xml

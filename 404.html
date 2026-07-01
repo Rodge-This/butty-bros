@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Butty Bros</title>
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#1A1714">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<style>
+  .e404 { min-height: 80vh; display: grid; place-items: center; text-align: center; padding: var(--bay) var(--edge); }
+  .e404__code { font-family: var(--display); font-size: clamp(5rem, 3rem + 15vw, 12rem); color: var(--sauce); line-height: .9; }
+</style>
+</head>
+<body class="dark" style="background:var(--iron)">
+
+<header class="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="/index.html" aria-label="Butty Bros home">
+      <svg class="brand__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="37" height="37" rx="4" stroke="#E8A03D" stroke-width="2"/>
+        <path d="M9 26c0-5 3-9 11-9s11 4 11 9" stroke="#F5EFE3" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M9 26h22" stroke="#C4432B" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      Butty<span>Bros</span>
+    </a>
+    <div class="nav__links" id="primary-links">
+      <a href="/index.html">Home</a>
+      <a href="/outdoor-catering.html">Outdoor Catering</a>
+      <a href="/menu.html">Shop Menu</a>
+      <span class="nav__cta"><a href="/enquire.html" class="btn btn--primary">Get a Quote</a></span>
+    </div>
+  </nav>
+</header>
+
+<main class="e404">
+  <div>
+    <div class="e404__code">404</div>
+    <h1 class="display" style="font-size:var(--step-3); color:var(--chalk); margin:1rem 0">This one's gone cold</h1>
+    <p class="lede" style="color:var(--chalk-soft); margin:0 auto 2rem; max-width:44ch">The page you're after isn't here — maybe it moved, or the link's not quite right. Let's get you back to the good stuff.</p>
+    <div class="hero__actions" style="justify-content:center">
+      <a href="/index.html" class="btn btn--primary btn--lg">Back to home</a>
+      <a href="/menu.html" class="btn btn--ghost-chalk btn--lg">See the menu</a>
+    </div>
+  </div>
+</main>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
