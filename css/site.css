@@ -1,0 +1,295 @@
+/* ==========================================================================
+   BUTTY BROS — v2 Design System
+   Modern · fresh · cool · Northern hospitality. Light-dominant, warm,
+   restrained. Built to convert catering enquiries. Every rule earns its place.
+   ========================================================================== */
+
+:root{
+  /* ---- Colour: warm greaseproof ground, iron ink, disciplined red ---- */
+  --paper:      #F7F3EA;   /* warm greaseproof — dominant ground */
+  --paper-2:    #EFE8D9;   /* recessed / alternating band */
+  --card:       #FCFAF5;   /* raised surface */
+  --ink:        #17130F;   /* primary text / rare dark punctuation */
+  --ink-2:      #554D43;   /* secondary text */
+  --ink-3:      #8A8073;   /* tertiary / captions */
+  --sauce:      #C4432B;   /* THE accent — hero word, primary CTA, links */
+  --sauce-dk:   #A6351F;
+  --yolk:       #E8A03D;   /* warm secondary accent */
+  --sage:       #3D5A3D;   /* dietary / trust cues */
+  --line:       #E0D6C4;   /* warm hairline */
+  --line-2:     #CDBFA6;   /* stronger hairline */
+
+  /* ---- Type ---- */
+  --display: "Archivo", system-ui, -apple-system, sans-serif;  /* modern geometric, logo family */
+  --body:    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono:    "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+
+  /* ---- Fluid type scale ---- */
+  --t--1: clamp(0.8rem, 0.77rem + 0.13vw, 0.87rem);
+  --t-0:  clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+  --t-1:  clamp(1.2rem, 1.1rem + 0.4vw, 1.45rem);
+  --t-2:  clamp(1.5rem, 1.3rem + 0.9vw, 2.05rem);
+  --t-3:  clamp(2rem, 1.6rem + 1.8vw, 3rem);
+  --t-4:  clamp(2.6rem, 1.9rem + 3.2vw, 4.4rem);
+
+  /* ---- Space ---- */
+  --edge: clamp(1.25rem, 0.5rem + 3vw, 3.5rem);
+  --bay:  clamp(4rem, 2.8rem + 6vw, 8rem);
+  --max:  1180px;
+
+  --radius: 4px;
+  --radius-lg: 12px;
+  --shadow:      0 1px 2px rgba(23,19,15,.05), 0 10px 30px rgba(23,19,15,.07);
+  --shadow-lift: 0 4px 10px rgba(23,19,15,.09), 0 20px 50px rgba(23,19,15,.13);
+}
+
+/* ---- Reset ---- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+body{
+  font-family:var(--body);font-size:var(--t-0);line-height:1.65;
+  color:var(--ink);background:var(--paper);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
+}
+img,picture,svg,video{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit;color:inherit}
+ul{list-style:none}
+:focus-visible{outline:3px solid var(--yolk);outline-offset:2px;border-radius:2px}
+
+/* ---- Typography primitives ---- */
+h1,h2,h3,h4{line-height:1.04;font-weight:800;letter-spacing:-.01em}
+.display{font-family:var(--display)}
+.eyebrow{
+  font-family:var(--mono);font-size:var(--t--1);font-weight:500;
+  text-transform:uppercase;letter-spacing:.22em;color:var(--sauce);
+}
+.eyebrow--yolk{color:var(--yolk)}
+.eyebrow--ink{color:var(--ink-2)}
+.lede{font-size:var(--t-1);line-height:1.5;color:var(--ink-2)}
+
+/* ---- Layout helpers ---- */
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--edge)}
+.wrap--narrow{max-width:840px}
+.bay{padding-block:var(--bay)}
+.band-2{background:var(--paper-2)}
+.mono{font-family:var(--mono)}
+.center{text-align:center}
+.stack>*+*{margin-top:1.4rem}
+
+/* ==========================================================================
+   BUTTONS — specific labels, disciplined colour
+   ========================================================================== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  font-family:var(--mono);font-weight:500;font-size:var(--t--1);
+  text-transform:uppercase;letter-spacing:.09em;
+  padding:1.05em 1.7em;border:1.5px solid transparent;border-radius:var(--radius);
+  cursor:pointer;transition:transform .16s ease,background .2s ease,color .2s ease,border-color .2s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn--primary{background:var(--sauce);color:var(--paper)}
+.btn--primary:hover{background:var(--sauce-dk)}
+.btn--dark{background:var(--ink);color:var(--paper)}
+.btn--dark:hover{background:#000}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.btn--ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn--yolk{background:var(--yolk);color:var(--ink)}
+.btn--yolk:hover{background:#d9902a}
+.btn--lg{padding:1.15em 2em;font-size:var(--t-0)}
+.btn--block{width:100%}
+.btn__arw{transition:transform .2s ease}
+.btn:hover .btn__arw{transform:translateX(4px)}
+
+/* ==========================================================================
+   HEADER — clean wordmark, sticky, translucent
+   ========================================================================== */
+.hdr{position:sticky;top:0;z-index:100;background:rgba(247,243,234,.85);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  min-height:72px;max-width:var(--max);margin-inline:auto;padding-inline:var(--edge)}
+/* wordmark lockup — reads clearly at small size (no fiddly rings) */
+.brand{display:inline-flex;align-items:center;gap:.6rem;flex:none}
+.brand__logo{font-family:var(--display);font-weight:800;font-size:1.15rem;
+  letter-spacing:.02em;text-transform:uppercase;color:var(--ink);line-height:1;
+  display:inline-flex;align-items:center;gap:.15rem}
+.brand__badge{width:34px;height:34px;flex:none}
+.nav__links{display:flex;align-items:center;gap:.15rem}
+.nav__links a{font-family:var(--mono);font-size:var(--t--1);text-transform:uppercase;
+  letter-spacing:.07em;color:var(--ink-2);padding:.55em .8em;border-radius:var(--radius);transition:color .2s ease}
+.nav__links a:hover{color:var(--ink)}
+.nav__links a.on{color:var(--sauce)}
+.nav__cta{margin-left:.5rem}
+.nav__toggle{display:none;background:transparent;border:1.5px solid var(--line-2);
+  border-radius:var(--radius);padding:.45em .5em;cursor:pointer}
+.nav__toggle svg{width:22px;height:22px;color:var(--ink)}
+@media (max-width:900px){
+  .nav__toggle{display:inline-flex}
+  .nav__links{position:fixed;inset:72px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;
+    background:var(--paper);border-bottom:1px solid var(--line);
+    padding:.5rem var(--edge) 1.25rem;transform:translateY(-120%);transition:transform .28s ease;
+    max-height:calc(100vh - 72px);overflow-y:auto}
+  .nav__links.open{transform:none}
+  .nav__links a{padding:.9em .3em;border-bottom:1px solid var(--line)}
+  .nav__cta{margin:1rem 0 0}
+  .nav__cta .btn{width:100%}
+}
+
+/* ==========================================================================
+   HERO — decision tool. Clear value prop, instant credibility, one action.
+   ========================================================================== */
+.hero{position:relative;padding-block:clamp(3rem,2rem + 6vw,6rem) clamp(2.5rem,2rem + 3vw,4rem)}
+.hero__grid{display:grid;grid-template-columns:1fr;gap:clamp(2rem,1rem + 4vw,4rem);align-items:center}
+@media (min-width:900px){.hero__grid{grid-template-columns:1.25fr .9fr}}
+.hero__badge{display:inline-flex;align-items:center;gap:.55rem;margin-bottom:1.5rem;
+  font-family:var(--mono);font-size:var(--t--1);text-transform:uppercase;letter-spacing:.14em;
+  color:var(--ink-2);background:var(--card);border:1px solid var(--line);border-radius:100px;padding:.5em 1em}
+.hero__dot{width:7px;height:7px;border-radius:50%;background:var(--sauce);
+  box-shadow:0 0 0 0 rgba(196,67,43,.5);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(196,67,43,.45)}70%{box-shadow:0 0 0 10px rgba(196,67,43,0)}100%{box-shadow:0 0 0 0 rgba(196,67,43,0)}}
+.hero h1{font-family:var(--display);font-weight:800;font-size:var(--t-4);line-height:.96;
+  letter-spacing:-.02em;text-transform:uppercase}
+.hero h1 .red{color:var(--sauce)}
+.hero__lede{font-size:clamp(1.05rem,1rem + .35vw,1.25rem);line-height:1.55;color:var(--ink-2);max-width:46ch;margin-top:1.6rem}
+.hero__cta{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2.1rem}
+.hero__phone{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);
+  font-size:var(--t--1);color:var(--ink-2);margin-top:1.3rem}
+.hero__phone strong{color:var(--ink);font-weight:600}
+.hero__phone a{color:var(--ink)}
+/* credibility strip */
+.hero__proof{display:flex;flex-wrap:wrap;gap:1.4rem 2.2rem;margin-top:2.6rem;padding-top:1.9rem;border-top:1px solid var(--line)}
+.pf{display:flex;flex-direction:column;gap:.15rem}
+.pf__n{font-family:var(--display);font-weight:800;font-size:1.7rem;line-height:1;color:var(--ink)}
+.pf__l{font-family:var(--mono);font-size:var(--t--1);text-transform:uppercase;letter-spacing:.1em;color:var(--ink-2)}
+
+/* hero visual placeholder (ready for real photo) */
+.hero__visual{position:relative;border-radius:var(--radius-lg);overflow:hidden;
+  aspect-ratio:4/5;background:var(--paper-2);border:1px solid var(--line);
+  display:grid;place-items:center}
+.hero__visual img{width:100%;height:100%;object-fit:cover}
+.hero__ph{text-align:center;color:var(--ink-3);font-family:var(--mono);font-size:var(--t--1);
+  text-transform:uppercase;letter-spacing:.1em;padding:2rem;line-height:1.7}
+
+/* ==========================================================================
+   SECTION HEAD
+   ========================================================================== */
+.head{max-width:640px}
+.head--center{margin-inline:auto;text-align:center}
+.head h2{font-family:var(--display);font-weight:800;text-transform:uppercase;
+  font-size:var(--t-3);margin-top:.7rem;line-height:1}
+.head p{margin-top:1rem;color:var(--ink-2);font-size:var(--t-1);line-height:1.5}
+.head--center p{margin-inline:auto}
+
+/* ==========================================================================
+   EVENT ROUTER — the homepage's main job. Big tappable cards.
+   ========================================================================== */
+.router{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);
+  border-radius:var(--radius-lg);overflow:hidden;grid-template-columns:1fr}
+@media (min-width:560px){.router{grid-template-columns:1fr 1fr}}
+@media (min-width:920px){.router{grid-template-columns:1fr 1fr 1fr}}
+.route{position:relative;background:var(--card);padding:1.9rem 1.7rem;
+  display:flex;flex-direction:column;gap:.55rem;transition:background .22s ease;min-height:180px}
+.route:hover{background:#fff}
+.route__ic{width:30px;height:30px;color:var(--sauce);stroke-width:1.6;margin-bottom:.4rem}
+.route h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:1.18rem;letter-spacing:0}
+.route p{font-size:.93rem;color:var(--ink-2);line-height:1.55;flex:1}
+.route__go{font-family:var(--mono);font-size:var(--t--1);text-transform:uppercase;letter-spacing:.08em;
+  color:var(--sauce);display:inline-flex;align-items:center;gap:.4rem;margin-top:.3rem}
+.route__go .btn__arw{transition:transform .2s ease}
+.route:hover .route__go .btn__arw{transform:translateX(4px)}
+.route::after{content:"";position:absolute;inset:0;border:2px solid transparent;border-radius:inherit;transition:border-color .2s ease;pointer-events:none}
+.route:hover::after{border-color:rgba(196,67,43,.15)}
+
+/* ==========================================================================
+   PROCESS — a real 3-step sequence (numbering earned)
+   ========================================================================== */
+.steps{display:grid;gap:2.4rem;grid-template-columns:1fr}
+@media (min-width:760px){.steps{grid-template-columns:repeat(3,1fr);gap:2rem}}
+.step{position:relative;padding-top:2.6rem}
+.step__n{position:absolute;top:0;left:0;font-family:var(--mono);font-size:var(--t--1);font-weight:500;
+  letter-spacing:.08em;color:var(--sauce);padding-bottom:.35rem;border-bottom:2px solid var(--sauce)}
+.step h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:var(--t-1);margin-bottom:.5rem}
+.step p{color:var(--ink-2);font-size:var(--t-0);line-height:1.55;max-width:34ch}
+
+/* ==========================================================================
+   PROOF — real reviews
+   ========================================================================== */
+.reviews{display:grid;gap:1.2rem;grid-template-columns:1fr}
+@media (min-width:720px){.reviews{grid-template-columns:repeat(3,1fr)}}
+.review{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--sauce);
+  border-radius:0 var(--radius) var(--radius) 0;padding:1.6rem;box-shadow:var(--shadow)}
+.review__stars{color:var(--yolk);font-size:1.05rem;letter-spacing:.1em;margin-bottom:.7rem}
+.review p{font-size:var(--t-0);line-height:1.5;font-weight:500}
+.review footer{margin-top:.9rem;font-family:var(--mono);font-size:var(--t--1);text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3)}
+
+/* ==========================================================================
+   DARK BAND — the single dark punctuation (CTA)
+   ========================================================================== */
+.band-dark{background:var(--ink);color:var(--paper)}
+.band-dark .eyebrow{color:var(--yolk)}
+.band-dark h2{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:var(--t-3);line-height:1;color:var(--paper)}
+.band-dark p{color:rgba(247,243,234,.72)}
+.band-cta{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
+@media (min-width:820px){.band-cta{grid-template-columns:1.15fr .85fr}}
+
+/* ==========================================================================
+   TABS — the Outdoor Catering page. Swap with no reload, app-smooth.
+   ========================================================================== */
+.tabs__bar{position:sticky;top:72px;z-index:40;background:var(--paper);border-bottom:1px solid var(--line);
+  padding-block:.7rem}
+.tabs__track{display:flex;gap:.5rem;overflow-x:auto;max-width:var(--max);margin-inline:auto;
+  padding-inline:var(--edge);scrollbar-width:none}
+.tabs__track::-webkit-scrollbar{display:none}
+.tab{flex:none;font-family:var(--mono);font-size:var(--t--1);text-transform:uppercase;letter-spacing:.06em;
+  padding:.6em 1.1em;border:1.5px solid var(--line-2);border-radius:100px;color:var(--ink-2);
+  background:var(--card);cursor:pointer;white-space:nowrap;transition:all .18s ease}
+.tab:hover{border-color:var(--sauce);color:var(--sauce)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tabpanel{display:none}
+.tabpanel.on{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.ft{background:var(--ink);color:var(--ink-3);padding-block:var(--bay) 2rem}
+.ft-grid{display:grid;gap:2.5rem;grid-template-columns:1fr}
+@media (min-width:720px){.ft-grid{grid-template-columns:1.5fr 1fr 1fr}}
+.ft .brand__logo{color:var(--paper);margin-bottom:1rem}
+.ft h4{font-family:var(--mono);font-size:var(--t--1);text-transform:uppercase;letter-spacing:.14em;color:var(--paper);margin-bottom:1rem}
+.ft a:hover{color:var(--yolk)}
+.ft-links>*+*{margin-top:.6rem}
+.ft address{font-style:normal;line-height:1.8}
+.ft-bottom{margin-top:var(--bay);padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:var(--t--1)}
+
+/* ==========================================================================
+   STICKY MOBILE QUOTE — always a thumb-tap away
+   ========================================================================== */
+.sticky-quote{display:none}
+@media (max-width:760px){
+  .sticky-quote{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:90;
+    padding:.7rem var(--edge);gap:.6rem;
+    background:rgba(247,243,234,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .sticky-quote .btn{flex:1}
+  body{padding-bottom:5rem}
+}
+
+/* ==========================================================================
+   HOURS TABLE
+   ========================================================================== */
+.hours{width:100%;border-collapse:collapse}
+.hours th,.hours td{text-align:left;padding:.7rem 0;border-bottom:1px dotted var(--line);font-size:var(--t-0)}
+.hours th{font-weight:600}
+.hours td{font-family:var(--mono);text-align:right;color:var(--ink-2)}
+.hours tr.today th,.hours tr.today td{color:var(--sauce);font-weight:700}
+
+/* ==========================================================================
+   REVEAL
+   ========================================================================== */
+.rev{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.rev.in{opacity:1;transform:none}

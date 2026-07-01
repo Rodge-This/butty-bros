@@ -1,6 +1,6 @@
 # BUTTY BROS — BRAND & POSITIONING LOCK
 
-**Purpose:** Single source of truth for the website build. Every design and copy decision checks against this. Built from the real Butty Bros Facebook page, Tripadvisor, the FSA food-hygiene register, and delivery platforms — observed, not invented.
+**Purpose:** Single source of truth for the website build. Every design and copy decision checks against this. Built from the real Butty Bros Facebook page (incl. their own dated catering poster, June 2026), Tripadvisor, the FSA food-hygiene register, and delivery platforms — observed, not invented.
 
 **Last updated:** 1 July 2026
 
@@ -31,7 +31,7 @@
 | Name | Butty Bros | All sources | — |
 | Address | 1 Gynn Square, Blackpool, FY1 2JR | FSA, Tripadvisor, FB | Confirmed |
 | **Phone** | **07752 743158** | FB contact info + FB "HUNGOVER?" promo tile (2 independent sightings) | ⚠️ **SITE IS WRONG** — currently shows 07548 175156. NEEDS OWNER CONFIRMATION then fix everywhere. |
-| Opening days | ⚠️ **UNRESOLVED** | FB says "Open 7 days"; current site says Sun closed | NEEDS OWNER CONFIRMATION. Do not guess. |
+| Opening hours | **Mon–Fri 0800–1430 · Sat–Sun 0830–1300 — OPEN 7 DAYS** | Their own catering poster on FB (dated ~mid-June 2026), corroborated by FB "Open 7 days" | ⚠️ **SITE IS WRONG** — currently shows Mon–Fri 7:30–2:30, Sat 8:30–1:00, **Sun CLOSED**. Poster is their most recent public statement: Sunday IS open (0830–1300), and weekday open is 0800 not 7:30. Worth a quick owner nod on the 7:30-vs-8:00 weekday detail, but fix Sunday regardless. |
 | Food hygiene | 5★ — inspected 1 July 2025. "Very good" food handling, "Very good" management, "Good" cleanliness | FSA register (business ID 1849145) | Genuine. FSA offers an official auto-updating badge widget — worth embedding. |
 | Facebook | 1.5K followers · "100% recommend (26 reviews)" | FB page | 26 reviews at 100% is a STRONGER, more real trust signal than the Tripadvisor 5.0. Feature this. |
 | Tripadvisor | 5.0 — but only **2 reviews**; listing is **unclaimed** | Tripadvisor | ⚠️ Site implies more acclaim than the 2-review base supports. Claiming the listing is free + recommended. |
@@ -57,7 +57,8 @@ Butty Bros talk in a **warm, cheeky, confident, generous Northern** voice. Emoji
 - "IT'S SCRAN TIME!!"
 - "HUNGOVER? CBA going to work after that amazing win? WE'VE GOT YOU!"
 - "When other establishments start to copy your menu… all jokes aside we just want everyone to do well — there's enough bread" ← generous, funny, self-assured. This IS the brand.
-- "OUTSIDE CATERING! PARTIES! EVENTS! MEETINGS! … WE CATER FOR ALL OCCASIONS! Let's talk" ← their own catering framing
+- "OUTSIDE CATERING! PARTIES! EVENTS! MEETINGS! … WE CATER FOR ALL OCCASIONS!" ← their own catering framing (from their catering poster)
+- "CALL US TODAY! LET'S TALK BUTTYS!" ← their actual catering call-to-action, in their voice. Candidate for the catering-page / enquiry CTA.
 
 **Voice rules for the site:**
 - Confident but warm. Never corporate, never salesy, never "premium" in a stuffy way.
@@ -112,8 +113,8 @@ Request wording for the owner to send: *"Can you send your logo as a transparent
 
 ## 6. OPEN DECISIONS (need owner input to fully lock)
 
-1. **Phone number** — confirm 07752 743158 is correct → then find-replace 07548 175156 everywhere (footer, contact, enquire, JSON-LD schema on every page).
-2. **Opening days** — Sun closed, or open 7 days? Resolve the FB-vs-site contradiction.
+1. **Phone number** — confirm 07752 743158 is correct → then find-replace 07548 175156 everywhere (footer, contact, enquire, JSON-LD schema on every page). ONLY genuinely-open fact left.
+2. **Opening hours** — ✅ RESOLVED from their own dated poster: Mon–Fri 0800–1430, Sat–Sun 0830–1300, open 7 days. (Optional owner nod on 7:30-vs-8:00 weekday open.) Fix Sunday-closed error on site.
 3. **Reviews approach** — recommendation: lead with verifiable FB "100% from 26 reviews" + 2 real attributed Tripadvisor quotes; drop the unverified "Local regular" one. Confirm.
 4. **Live review pull-through?** — the site's reviews are currently hardcoded text, not a live feed. True live-updating reviews = separate, larger piece of work (API/widget). The FSA hygiene badge IS available as a proper auto-updating embed. Decide scope.
 5. **Email + domain** — still placeholders (`hello@buttybros.co.uk`, `buttybros.co.uk`). Confirm real email; no domain owned yet.
@@ -123,18 +124,29 @@ Request wording for the owner to send: *"Can you send your logo as a transparent
 
 ## 7. STILL TO DO (build phase)
 
+### LOCKED DIRECTION (S-final — do not deviate)
+- **Feel:** modern, fresh, cool — Northern brothers, Northern hospitality. Character in the words + one or two brand moments, NOT plastered everywhere. Refined over loud.
+- **Above all: the site must DO ITS JOB** — turn "I need to feed X people" into a sent enquiry. Decision tool, not a brochure. Every section earns its place or it's cut.
+- **Structure (signed off):** Homepage routes → single tabbed Outdoor Catering page (event types as tabs, each with its own real URL for SEO) → Menu, About, Visit Us as lean supporting pages → Get a Quote reachable everywhere + sticky on mobile. Nav = 6 items max. Nothing sprawls from the homepage.
+- **Event types (in this order):** Parties & celebrations · Funerals & wakes · Workplace/corporate · Community & sports · Festivals. Real scale first, big events as "we scale up."
+- **Homepage's ONE job:** say what they do + prove it (100% recommended / 26 reviews, 5★ hygiene) + route to event type + drive to quote. Does NOT try to be the whole site.
+- **CTAs are specific**, not generic ("Plan your party", "Arrange wake catering") not just "Get a quote" everywhere.
+- **Logo:** the reconstructed circular SVG is muddy at small header size — use a clean WORDMARK lockup ("BUTTY BROS" heavy geometric sans, no rings) in the header where it must read small; keep the circular badge only where it has room (favicon, large/footer). Swap for real file if provided.
+- **Mobile-first, fast, smooth.** Tabs swap with no reload. Sticky quote button on mobile.
+- **Build real files on disk, preview on Vercel URL (alongside untouched live site) before shipping.** Nothing replaces live until owner approves on their phone.
+
+### Task checklist
 - [ ] Resolve open decisions above (owner input)
-- [ ] Fix phone number everywhere (once confirmed)
-- [ ] Wire logo-mark.svg into header/footer across all 8 HTML pages (replace placeholder mark)
-- [ ] Hero tone-down — build 1–2 options, owner picks
-- [ ] Reduce red usage to earn-its-place level
-- [ ] Reorder catering positioning: birthdays/funerals/parties first, big events as "also"
-- [ ] Tighten the scroll — trim/merge sections
-- [ ] Rework reviews section to verified signals
-- [ ] Drop in real images as they arrive
-- [ ] Consider: claim Tripadvisor listing, embed FSA hygiene badge
+- [ ] Fix phone number everywhere (placeholder OK for now — finer details before go-live)
+- [ ] Fix opening hours everywhere (Sun now OPEN 0830–1300; weekday 0800–1430) incl. live open/closed badge logic
+- [ ] New homepage as decision tool (hero + event router + proof + quote)
+- [ ] Tabbed Outdoor Catering page — 5 event types, each written well, each its own URL
+- [ ] Clean wordmark logo lockup for header
+- [ ] Lean supporting pages: Menu, About, Visit Us
+- [ ] Reduce red to earn-its-place; warm light-dominant palette; modern geometric display type
 - [ ] Enquiry form → wire to real endpoint (Formspree/Netlify/Basin)
 - [ ] Email + domain when confirmed
+- [ ] Consider: claim Tripadvisor listing, embed FSA hygiene badge
 
 ---
 
