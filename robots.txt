@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.buttybros.co.uk/sitemap.xml
+Sitemap: https://butty-bros.vercel.app/sitemap.xml
