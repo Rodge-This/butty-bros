@@ -3,27 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Shop Menu — Breakfast Butties, Smash Burgers &amp; More | Butty Bros Blackpool</title>
-<meta name="description" content="The full Butty Bros shop menu at 1 Gynn Square, Blackpool: breakfast butties, smash burgers, hot barms, loaded fries, toasties and more. Freshly cooked, great prices.">
+<title>The Menu — Breakfast Butties, Smash Burgers &amp; More | Butty Bros Blackpool</title>
+<meta name="description" content="The full Butty Bros menu at 1 Gynn Square, Blackpool: breakfast butties, smash burgers, hot barms, loaded fries, toasties and more. Cooked fresh to order, seven days a week.">
+<link rel="canonical" href="https://butty-bros.vercel.app/menu.html">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="theme-color" content="#17130F">
+<meta name="theme-color" content="#131110">
 <meta name="geo.region" content="GB-BPL">
 <meta name="geo.placename" content="Blackpool">
-
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Butty Bros">
-<meta property="og:title" content="Shop Menu | Butty Bros Blackpool">
-<meta property="og:description" content="Breakfast butties, smash burgers, hot barms and loaded fries — freshly cooked at 1 Gynn Square, Blackpool.">
+<meta property="og:title" content="The Menu | Butty Bros Blackpool">
+<meta property="og:description" content="Breakfast butties, smash burgers, hot barms and loaded fries — cooked fresh at 1 Gynn Square, Blackpool. Open 7 days.">
+<meta property="og:url" content="https://butty-bros.vercel.app/menu.html">
+<meta property="og:image" content="https://butty-bros.vercel.app/images/og-menu.jpg">
 <meta property="og:locale" content="en_GB">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/v3.css">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -46,303 +44,196 @@
 </script>
 </head>
 <body>
-<a class="btn" href="#main" style="position:absolute;left:8px;top:-60px;z-index:200">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
 
-<!-- HEADER -->
-<header class="hdr">
-  <nav class="nav" aria-label="Primary">
-    <a class="brand" href="index-v2.html" aria-label="Butty Bros home">
-      <img class="brand__disc" src="images/logo-mark.svg" alt="" width="46" height="46">
-      <span class="brand__word">Butty Bros<small>Blackpool</small></span>
-    </a>
-    <button class="nav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+<nav class="nav solid" id="nav" aria-label="Primary">
+  <a class="nav__brand" href="index.html">BUTTY BROS <small>Blackpool</small></a>
+  <div class="nav__links">
+    <a href="menu.html" aria-current="page">Menu</a>
+    <a href="outdoor-catering.html">Outdoor catering</a>
+    <a href="index.html#visit">Find us</a>
+    <a class="pill" href="enquire.html">Get a quote</a>
+    <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mmenu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" stroke-linecap="round"/></svg>
     </button>
-    <div class="nav__links" id="nav-links">
-      <a href="index-v2.html">Home</a>
-      <a href="catering-v2.html">Outdoor Catering</a>
-      <a href="menu.html" class="on">Menu</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Visit Us</a>
-      <span class="nav__cta"><a href="enquire.html" class="btn btn--primary">Get a Quote</a></span>
-    </div>
-  </nav>
-</header>
+  </div>
+</nav>
+<div class="mmenu" id="mmenu">
+  <a href="index.html">Home <span class="arw" aria-hidden="true">→</span></a>
+  <a href="menu.html">Menu <span class="arw" aria-hidden="true">→</span></a>
+  <a href="outdoor-catering.html">Outdoor catering <span class="arw" aria-hidden="true">→</span></a>
+  <a href="index.html#visit">Find us <span class="arw" aria-hidden="true">→</span></a>
+  <a href="enquire.html" class="hot">Get a quote <span class="arw" aria-hidden="true">→</span></a>
+  <p class="mmenu__meta">1 Gynn Square, Blackpool FY1 2JR<br><a href="tel:+447752743158">07752 743158</a> · Open 7 days</p>
+</div>
 
 <main id="main">
 
-<!-- INTRO -->
-<section class="wrap" style="padding-block:clamp(2.5rem,2rem+4vw,4.5rem) 1.5rem">
-  <div class="head" style="max-width:720px">
-    <span class="eyebrow">The shop menu</span>
-    <h1 class="display" style="font-size:var(--t-4);text-transform:uppercase;line-height:.96;margin-top:.7rem">Cooked fresh,<br>to order</h1>
-    <p class="lede" style="margin-top:1.3rem;max-width:52ch">Everything we serve at 1 Gynn Square, cooked fresh to order — seven days a week, from the crack of dawn.</p>
-    <p class="mono" style="margin-top:1.3rem;color:var(--ink-3);font-size:var(--t--1);letter-spacing:.04em">Prices correct at time of publishing · Collection &amp; delivery via Blackpool Eats, Just Eat &amp; Deliveroo</p>
-  </div>
-</section>
+<header class="pagehead wrap">
+  <p class="status"><span class="dot" aria-hidden="true"></span> <span id="open-badge">Gynn Square, Blackpool</span></p>
+  <h1>Cooked fresh,<br><em>to order.</em></h1>
+  <p class="lede">Everything we serve at 1 Gynn Square, seven days a week, from the crack of dawn. Pick a category or just have a browse.</p>
+  <p class="note">Prices correct at time of publishing · Collection &amp; delivery via Blackpool Eats, Just Eat &amp; Deliveroo</p>
+</header>
 
-<!-- STICKY CATEGORY NAV -->
-<nav class="menu-nav" aria-label="Menu categories">
-  <div class="menu-nav__track">
+<nav class="chipnav" aria-label="Menu categories">
+  <div class="chipnav__track">
     <a href="#breakfast">Breakfast</a>
-    <a href="#trays">Breakfast Trays</a>
-    <a href="#burgers">Smash Burgers</a>
-    <a href="#barms">Hot Barms</a>
+    <a href="#trays">Trays</a>
+    <a href="#burgers">Smash burgers</a>
+    <a href="#barms">Hot barms</a>
     <a href="#sandwiches">Sandwiches</a>
     <a href="#specials">Specials</a>
     <a href="#toasties">Toasties</a>
-    <a href="#chips">Chips &amp; Fries</a>
+    <a href="#chips">Chips &amp; fries</a>
     <a href="#pies">Pies</a>
-    <a href="#drinks">Drinks &amp; Extras</a>
+    <a href="#drinks">Drinks &amp; extras</a>
   </div>
 </nav>
 
-<section class="bay" style="padding-top:2.5rem">
-  <div class="wrap">
+<section class="menuboard">
+  <div class="mgrid">
 
-    <!-- BREAKFAST SANDWICHES -->
-    <div class="menu-section rev" id="breakfast">
-      <div class="menu-section__hd"><h2 class="display">Breakfast Sandwiches</h2><p class="menu-section__note">Served on your choice of toast, barm or batton</p></div>
-      <div class="menu-cols">
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Sausage, Bacon &amp; Egg</span><span class="menu-row__price">£5.00</span><span class="menu-row__desc">The full works — juicy sausage, smoky bacon and a fried egg.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Bacon &amp; Egg</span><span class="menu-row__price">£4.50</span><span class="menu-row__desc">Crispy back bacon and a golden-yolked egg.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Sausage &amp; Egg</span><span class="menu-row__price">£4.50</span><span class="menu-row__desc">Grilled sausage and a fried egg, warm and fresh.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Bacon &amp; Sausage</span><span class="menu-row__price">£4.50</span><span class="menu-row__desc">Back bacon and herby sausage together.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Homemade Square Sausage</span><span class="menu-row__price">£4.50</span><span class="menu-row__desc">Scottish-style square sausage, seared golden.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Spam &amp; Egg</span><span class="menu-row__price">£4.50</span><span class="menu-row__desc">A nostalgic classic — seared spam and a soft egg.</span></div>
-        </div>
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Back Bacon</span><span class="menu-row__price">£3.90</span><span class="menu-row__desc">Thick-cut back bacon in fresh buttered bread.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Cumberland Sausage</span><span class="menu-row__price">£3.90</span><span class="menu-row__desc">Peppery Cumberland sausage, grilled to order.</span></div>
-          <div class="menu-row"><span class="menu-row__name">2 Fried Eggs</span><span class="menu-row__price">£3.50</span><span class="menu-row__desc">Two golden-yolked fried eggs, simple and good.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Vegetarian Sausage <span class="mtag mtag--v">V</span></span><span class="menu-row__price">£3.50</span><span class="menu-row__desc">Hearty meat-free sausage in a soft roll.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Veg Sausage &amp; Egg <span class="mtag mtag--v">V</span></span><span class="menu-row__price">£4.00</span><span class="menu-row__desc">Vegetarian sausage and a fried egg.</span></div>
-        </div>
-      </div>
+    <div class="mcat" id="breakfast">
+      <div class="mcat__hd"><h2>Breakfast sandwiches</h2><p>On toast, barm or batton</p></div>
+      <div class="mrow"><span>Sausage, bacon &amp; egg</span><span class="fill"></span><span class="p">£5.00</span></div>
+      <div class="mrow"><span>Bacon &amp; egg</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mrow"><span>Sausage &amp; egg</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mrow"><span>Bacon &amp; sausage</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mrow"><span>Homemade square sausage</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mrow"><span>Spam &amp; egg</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mrow"><span>Veg sausage &amp; egg<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£4.00</span></div>
+      <div class="mrow"><span>Back bacon</span><span class="fill"></span><span class="p">£3.90</span></div>
+      <div class="mrow"><span>Cumberland sausage</span><span class="fill"></span><span class="p">£3.90</span></div>
+      <div class="mrow"><span>2 fried eggs<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£3.50</span></div>
+      <div class="mrow"><span>Vegetarian sausage<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£3.50</span></div>
     </div>
 
-    <!-- BREAKFAST TRAYS -->
-    <div class="menu-section rev" id="trays">
-      <div class="menu-section__hd"><h2 class="display">Breakfast Trays</h2><p class="menu-section__note">Proper cooked breakfasts, boxed up hot</p></div>
-      <div class="menu-cols">
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Scottish Breakfast</span><span class="menu-row__price">£9.00</span><span class="menu-row__desc">The big one — all the traditional favourites, Scottish style.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Large Breakfast</span><span class="menu-row__price">£8.00</span><span class="menu-row__desc">A full cooked breakfast with all the trimmings.</span></div>
-          <div class="menu-row"><span class="menu-row__name">2 Sausages, 2 Eggs, Chips, Beans &amp; Bread</span><span class="menu-row__price">£6.50</span><span class="menu-row__desc">A loaded plate to set you up for the day.</span></div>
-        </div>
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Small Breakfast</span><span class="menu-row__price">£6.20</span><span class="menu-row__desc">The essentials, cooked fresh.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Vegetarian Breakfast <span class="mtag mtag--v">V</span></span><span class="menu-row__price">£6.00</span><span class="menu-row__desc">A full breakfast with meat-free favourites.</span></div>
-        </div>
-      </div>
+    <div class="mcat" id="trays">
+      <div class="mcat__hd"><h2>Breakfast trays</h2><p>Proper cooked breakfasts, boxed up hot</p></div>
+      <div class="mrow"><span>Scottish breakfast</span><span class="fill"></span><span class="p">£9.00</span><span class="sub">The big one — all the traditional favourites, Scottish style.</span></div>
+      <div class="mrow"><span>Large breakfast</span><span class="fill"></span><span class="p">£8.00</span></div>
+      <div class="mrow"><span>2 sausages, 2 eggs, chips, beans &amp; bread</span><span class="fill"></span><span class="p">£6.50</span></div>
+      <div class="mrow"><span>Small breakfast</span><span class="fill"></span><span class="p">£6.20</span></div>
+      <div class="mrow"><span>Vegetarian breakfast<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£6.00</span></div>
     </div>
 
-    <!-- SMASH BURGERS -->
-    <div class="menu-section rev" id="burgers">
-      <div class="menu-section__hd"><h2 class="display">Butty Bros Smash Burgers</h2><p class="menu-section__note">Smashed thin, seared hard, stacked right</p></div>
-      <div class="menu-cols">
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Brunch Burger</span><span class="menu-row__price">£7.50</span><span class="menu-row__desc">A burger and breakfast in one — layered with the good stuff.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Spicy Burger <span class="mtag mtag--hot">Hot</span></span><span class="menu-row__price">£6.95</span><span class="menu-row__desc">Smash burger with a proper spicy kick.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Chilli Cheese Burger <span class="mtag mtag--hot">Hot</span></span><span class="menu-row__price">£6.75</span><span class="menu-row__desc">Topped with spicy chilli and melted cheese.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Blue Cheese Smash</span><span class="menu-row__price">£6.00</span><span class="menu-row__desc">Loaded with tangy blue cheese.</span></div>
-        </div>
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Southern Fried Chicken Burger</span><span class="menu-row__price">£6.00</span><span class="menu-row__desc">Crispy fried chicken, seasoned and stacked.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Double Burger</span><span class="menu-row__price">£5.00</span><span class="menu-row__desc">Two smashed patties, double the flavour.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Single Burger</span><span class="menu-row__price">£4.50</span><span class="menu-row__desc">One smashed patty, juicy and seasoned.</span></div>
-        </div>
-      </div>
+    <div class="mcat" id="burgers">
+      <div class="mcat__hd"><h2>Smash burgers</h2><p>Smashed thin, seared hard, stacked right</p></div>
+      <div class="mrow"><span>Brunch burger</span><span class="fill"></span><span class="p">£7.50</span><span class="sub">A burger and breakfast in one.</span></div>
+      <div class="mrow"><span>Spicy burger<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.95</span></div>
+      <div class="mrow"><span>Chilli cheese burger<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.75</span></div>
+      <div class="mrow"><span>Blue cheese smash</span><span class="fill"></span><span class="p">£6.00</span></div>
+      <div class="mrow"><span>Southern fried chicken burger</span><span class="fill"></span><span class="p">£6.00</span></div>
+      <div class="mrow"><span>Double burger</span><span class="fill"></span><span class="p">£5.00</span></div>
+      <div class="mrow"><span>Single burger</span><span class="fill"></span><span class="p">£4.50</span></div>
     </div>
 
-    <!-- HOT BARMS -->
-    <div class="menu-section rev" id="barms">
-      <div class="menu-section__hd"><h2 class="display">Hot Barms</h2><p class="menu-section__note">Served hot in a fresh barm — £4.75 each</p></div>
-      <div class="menu-cols">
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Hot Beef &amp; Onion</span><span class="menu-row__price">£4.75</span><span class="menu-row__desc">Hot roast beef and onions in a warm barm.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Hot Chicken &amp; Stuffing</span><span class="menu-row__price">£4.75</span><span class="menu-row__desc">Roast chicken with stuffing, served hot.</span></div>
-        </div>
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Hot Ham &amp; Mustard</span><span class="menu-row__price">£4.75</span><span class="menu-row__desc">Hot ham with a sharp hit of mustard.</span></div>
-        </div>
-      </div>
+    <div class="mcat" id="barms">
+      <div class="mcat__hd"><h2>Hot barms</h2><p>Served hot in a fresh barm</p></div>
+      <div class="mrow"><span>Hot beef &amp; onion</span><span class="fill"></span><span class="p">£4.75</span></div>
+      <div class="mrow"><span>Hot chicken &amp; stuffing</span><span class="fill"></span><span class="p">£4.75</span></div>
+      <div class="mrow"><span>Hot ham &amp; mustard</span><span class="fill"></span><span class="p">£4.75</span></div>
     </div>
 
-    <!-- SANDWICHES -->
-    <div class="menu-section rev" id="sandwiches">
-      <div class="menu-section__hd"><h2 class="display">Sandwiches</h2><p class="menu-section__note">Cold sandwiches, freshly made</p></div>
-      <div class="menu-cols">
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Chicken, Bacon &amp; Mayo</span><span class="menu-row__price">£4.50</span></div>
-          <div class="menu-row"><span class="menu-row__name">Ham, Cheese &amp; Pickle</span><span class="menu-row__price">£4.50</span></div>
-          <div class="menu-row"><span class="menu-row__name">Tuna Mayo</span><span class="menu-row__price">£4.00</span></div>
-          <div class="menu-row"><span class="menu-row__name">Cheese Savoury <span class="mtag mtag--v">V</span></span><span class="menu-row__price">£4.00</span></div>
-          <div class="menu-row"><span class="menu-row__name">Grated Cheese <span class="mtag mtag--v">V</span></span><span class="menu-row__price">£3.90</span></div>
-        </div>
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Roast Ham</span><span class="menu-row__price">£3.90</span></div>
-          <div class="menu-row"><span class="menu-row__name">Roast Chicken</span><span class="menu-row__price">£3.90</span></div>
-          <div class="menu-row"><span class="menu-row__name">Sliced Salami</span><span class="menu-row__price">£3.90</span></div>
-          <div class="menu-row"><span class="menu-row__name">Egg Mayo <span class="mtag mtag--v">V</span></span><span class="menu-row__price">£3.50</span></div>
-          <div class="menu-row"><span class="menu-row__name">Sliced Egg <span class="mtag mtag--v">V</span></span><span class="menu-row__price">£3.50</span></div>
-        </div>
-      </div>
+    <div class="mcat" id="sandwiches">
+      <div class="mcat__hd"><h2>Sandwiches</h2><p>Cold, freshly made</p></div>
+      <div class="mrow"><span>Chicken, bacon &amp; mayo</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mrow"><span>Ham, cheese &amp; pickle</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mrow"><span>Tuna mayo</span><span class="fill"></span><span class="p">£4.00</span></div>
+      <div class="mrow"><span>Cheese savoury<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£4.00</span></div>
+      <div class="mrow"><span>Grated cheese<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£3.90</span></div>
+      <div class="mrow"><span>Roast ham</span><span class="fill"></span><span class="p">£3.90</span></div>
+      <div class="mrow"><span>Roast chicken</span><span class="fill"></span><span class="p">£3.90</span></div>
+      <div class="mrow"><span>Sliced salami</span><span class="fill"></span><span class="p">£3.90</span></div>
+      <div class="mrow"><span>Egg mayo<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£3.50</span></div>
+      <div class="mrow"><span>Sliced egg<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£3.50</span></div>
     </div>
 
-    <!-- SPECIALS -->
-    <div class="menu-section rev" id="specials">
-      <div class="menu-section__hd"><h2 class="display">Specials &amp; Melts</h2><p class="menu-section__note">Sandwich specials and Butty Bros signatures</p></div>
-      <div class="menu-cols">
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Italian</span><span class="menu-row__price">£6.50</span><span class="menu-row__desc">Italian-style, filled with meats, cheese and salad.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Spanish</span><span class="menu-row__price">£6.50</span><span class="menu-row__desc">Bold Spanish flavours, hot and loaded.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Club</span><span class="menu-row__price">£6.50</span><span class="menu-row__desc">Triple-decker with chicken, bacon and salad.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Spicy Melt <span class="mtag mtag--hot">Hot</span></span><span class="menu-row__price">£6.50</span><span class="menu-row__desc">Loaded with cheese and heat.</span></div>
-        </div>
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Hunters Toastie</span><span class="menu-row__price">£6.00</span><span class="menu-row__desc">Chicken, bacon, BBQ sauce and cheese, toasted.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Spicy Bacon Toastie <span class="mtag mtag--hot">Hot</span></span><span class="menu-row__price">£6.00</span><span class="menu-row__desc">Spicy bacon and melted cheese.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Tuna Melt</span><span class="menu-row__price">£5.50</span><span class="menu-row__desc">Tuna toasted with gooey cheese.</span></div>
-          <div class="menu-row"><span class="menu-row__name">BLT</span><span class="menu-row__price">£4.30</span><span class="menu-row__desc">Crispy bacon, lettuce and tomato.</span></div>
-        </div>
-      </div>
+    <div class="mcat" id="specials">
+      <div class="mcat__hd"><h2>Specials &amp; melts</h2><p>Butty Bros signatures</p></div>
+      <div class="mrow"><span>Italian</span><span class="fill"></span><span class="p">£6.50</span></div>
+      <div class="mrow"><span>Spanish</span><span class="fill"></span><span class="p">£6.50</span></div>
+      <div class="mrow"><span>Club</span><span class="fill"></span><span class="p">£6.50</span><span class="sub">Triple-decker — chicken, bacon and salad.</span></div>
+      <div class="mrow"><span>Spicy melt<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.50</span></div>
+      <div class="mrow"><span>Hunters toastie</span><span class="fill"></span><span class="p">£6.00</span><span class="sub">Chicken, bacon, BBQ sauce and cheese.</span></div>
+      <div class="mrow"><span>Spicy bacon toastie<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.00</span></div>
+      <div class="mrow"><span>Tuna melt</span><span class="fill"></span><span class="p">£5.50</span></div>
+      <div class="mrow"><span>BLT</span><span class="fill"></span><span class="p">£4.30</span></div>
     </div>
 
-    <!-- TOASTIES -->
-    <div class="menu-section rev" id="toasties">
-      <div class="menu-section__hd"><h2 class="display">Toasties &amp; Salad Boxes</h2></div>
-      <div class="menu-cols">
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Toastie — Any 2 Fillings</span><span class="menu-row__price">£4.75</span><span class="menu-row__desc">Extra filling 50p. Toasted golden and hot.</span></div>
-        </div>
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Salad Box — Any Filling</span><span class="menu-row__price">£6.00</span><span class="menu-row__desc">Fresh salad bowl with your chosen filling.</span></div>
-        </div>
-      </div>
+    <div class="mcat" id="toasties">
+      <div class="mcat__hd"><h2>Toasties &amp; salad boxes</h2></div>
+      <div class="mrow"><span>Toastie — any 2 fillings</span><span class="fill"></span><span class="p">£4.75</span><span class="sub">Extra filling 50p.</span></div>
+      <div class="mrow"><span>Salad box — any filling</span><span class="fill"></span><span class="p">£6.00</span></div>
     </div>
 
-    <!-- CHIPS -->
-    <div class="menu-section rev" id="chips">
-      <div class="menu-section__hd"><h2 class="display">Chips &amp; Loaded Fries</h2><p class="menu-section__note">Fried golden and crisp</p></div>
-      <div class="menu-cols">
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Cheese Burger Loaded Fries</span><span class="menu-row__price">£8.50</span><span class="menu-row__desc">Fries piled with cheeseburger and melted cheese.</span></div>
-          <div class="menu-row"><span class="menu-row__name">Chips, Chilli Con Carne &amp; Cheese <span class="mtag mtag--hot">Hot</span></span><span class="menu-row__price">£6.25</span></div>
-          <div class="menu-row"><span class="menu-row__name">Chips &amp; Chicken Curry</span><span class="menu-row__price">£6.25</span></div>
-          <div class="menu-row"><span class="menu-row__name">Chips, Cheese &amp; Beans</span><span class="menu-row__price">£4.75</span></div>
-          <div class="menu-row"><span class="menu-row__name">Chips, Cheese &amp; Gravy</span><span class="menu-row__price">£4.50</span></div>
-          <div class="menu-row"><span class="menu-row__name">Salt &amp; Pepper Chips</span><span class="menu-row__price">£4.50</span></div>
-        </div>
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Cheesy Chips</span><span class="menu-row__price">£4.25</span></div>
-          <div class="menu-row"><span class="menu-row__name">Chips &amp; Gravy</span><span class="menu-row__price">£4.00</span></div>
-          <div class="menu-row"><span class="menu-row__name">Chips &amp; Curry Sauce</span><span class="menu-row__price">£4.00</span></div>
-          <div class="menu-row"><span class="menu-row__name">Chips</span><span class="menu-row__price">£3.50</span></div>
-          <div class="menu-row"><span class="menu-row__name">Chip Butty</span><span class="menu-row__price">£3.50</span></div>
-        </div>
-      </div>
+    <div class="mcat" id="chips">
+      <div class="mcat__hd"><h2>Chips &amp; loaded fries</h2><p>Fried golden and crisp</p></div>
+      <div class="mrow"><span>Cheese burger loaded fries</span><span class="fill"></span><span class="p">£8.50</span></div>
+      <div class="mrow"><span>Chips, chilli con carne &amp; cheese<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.25</span></div>
+      <div class="mrow"><span>Chips &amp; chicken curry</span><span class="fill"></span><span class="p">£6.25</span></div>
+      <div class="mrow"><span>Chips, cheese &amp; beans</span><span class="fill"></span><span class="p">£4.75</span></div>
+      <div class="mrow"><span>Chips, cheese &amp; gravy</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mrow"><span>Salt &amp; pepper chips</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mrow"><span>Cheesy chips</span><span class="fill"></span><span class="p">£4.25</span></div>
+      <div class="mrow"><span>Chips &amp; gravy</span><span class="fill"></span><span class="p">£4.00</span></div>
+      <div class="mrow"><span>Chips &amp; curry sauce</span><span class="fill"></span><span class="p">£4.00</span></div>
+      <div class="mrow"><span>Chips</span><span class="fill"></span><span class="p">£3.50</span></div>
+      <div class="mrow"><span>Chip butty</span><span class="fill"></span><span class="p">£3.50</span></div>
     </div>
 
-    <!-- PIES -->
-    <div class="menu-section rev" id="pies">
-      <div class="menu-section__hd"><h2 class="display">Pies</h2></div>
-      <div class="menu-cols">
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Meat &amp; Potato Pie, Chips &amp; Gravy</span><span class="menu-row__price">£5.50</span><span class="menu-row__desc">A hearty pie with chips and gravy.</span></div>
-        </div>
-        <div>
-          <div class="menu-row"><span class="menu-row__name">Meat &amp; Potato Pie</span><span class="menu-row__price">£2.50</span><span class="menu-row__desc">Traditional, on its own.</span></div>
-        </div>
-      </div>
+    <div class="mcat" id="pies">
+      <div class="mcat__hd"><h2>Pies</h2></div>
+      <div class="mrow"><span>Meat &amp; potato pie, chips &amp; gravy</span><span class="fill"></span><span class="p">£5.50</span></div>
+      <div class="mrow"><span>Meat &amp; potato pie</span><span class="fill"></span><span class="p">£2.50</span></div>
     </div>
 
-    <!-- DRINKS & EXTRAS -->
-    <div class="menu-section rev" id="drinks">
-      <div class="menu-section__hd"><h2 class="display">Drinks &amp; Extras</h2></div>
-      <div class="menu-cols">
-        <div>
-          <h3 class="menu-sub">Cold Drinks</h3>
-          <div class="menu-row"><span class="menu-row__name">Coca-Cola / Diet Coke — 330ml</span><span class="menu-row__price">£1.50</span></div>
-          <div class="menu-row"><span class="menu-row__name">Fanta Orange / Lemon — 330ml</span><span class="menu-row__price">£1.50</span></div>
-          <div class="menu-row"><span class="menu-row__name">Irn-Bru — 330ml</span><span class="menu-row__price">£1.50</span></div>
-          <div class="menu-row"><span class="menu-row__name">Water — 500ml</span><span class="menu-row__price">£1.10</span></div>
-          <div class="menu-row"><span class="menu-row__name">Kettle Crisps</span><span class="menu-row__price">£1.20</span></div>
-        </div>
-        <div>
-          <h3 class="menu-sub">Extras &amp; Sides</h3>
-          <div class="menu-row"><span class="menu-row__name">Chilli Con Carne Pot</span><span class="menu-row__price">£2.50</span></div>
-          <div class="menu-row"><span class="menu-row__name">Coleslaw</span><span class="menu-row__price">£1.80</span></div>
-          <div class="menu-row"><span class="menu-row__name">Curry Sauce / Gravy / Beans</span><span class="menu-row__price">£1.50</span></div>
-          <div class="menu-row"><span class="menu-row__name">Buttered &amp; Battered Barm</span><span class="menu-row__price">£1.00</span></div>
-          <div class="menu-row"><span class="menu-row__name">Sauces (ketchup, BBQ, garlic mayo &amp; more)</span><span class="menu-row__price">£1.00</span></div>
-          <div class="menu-row"><span class="menu-row__name">Buttered Barm</span><span class="menu-row__price">£0.75</span></div>
-        </div>
-      </div>
+    <div class="mcat" id="drinks">
+      <div class="mcat__hd"><h2>Drinks &amp; extras</h2></div>
+      <div class="mrow"><span>Chilli con carne pot</span><span class="fill"></span><span class="p">£2.50</span></div>
+      <div class="mrow"><span>Coleslaw</span><span class="fill"></span><span class="p">£1.80</span></div>
+      <div class="mrow"><span>Coca-Cola / Diet Coke · 330ml</span><span class="fill"></span><span class="p">£1.50</span></div>
+      <div class="mrow"><span>Fanta orange / lemon · 330ml</span><span class="fill"></span><span class="p">£1.50</span></div>
+      <div class="mrow"><span>Irn-Bru · 330ml</span><span class="fill"></span><span class="p">£1.50</span></div>
+      <div class="mrow"><span>Curry sauce / gravy / beans</span><span class="fill"></span><span class="p">£1.50</span></div>
+      <div class="mrow"><span>Kettle crisps</span><span class="fill"></span><span class="p">£1.20</span></div>
+      <div class="mrow"><span>Water · 500ml</span><span class="fill"></span><span class="p">£1.10</span></div>
+      <div class="mrow"><span>Buttered &amp; battered barm</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>Sauces — ketchup, BBQ, garlic mayo &amp; more</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>Buttered barm</span><span class="fill"></span><span class="p">£0.75</span></div>
     </div>
 
   </div>
 </section>
 
-<!-- CATERING CROSS-SELL -->
-<section class="bay band-dark">
-  <div class="wrap band-cta">
-    <div class="rev">
-      <span class="eyebrow">Feeding a crowd?</span>
-      <h2 style="margin-top:.7rem">This whole menu<br>travels</h2>
-      <p style="margin-top:1rem;font-size:var(--t-1)">Everything you see here, we can bring to your event — cooked fresh on site for 20 people or 200. Butties by the hundred, a live burger bar, loaded fries for a festival crowd.</p>
+<div class="deck" style="padding-top:clamp(1.5rem,4vh,2.5rem)">
+  <article class="card card--butter" aria-label="Catering cross-sell">
+    <div class="card__tag"><span>Feeding a crowd?</span><span>20 people or 200</span></div>
+    <h2>This whole menu<br>travels.</h2>
+    <div class="card__body">
+      <p class="card__copy">Everything on this board, we can bring to your event — butties by the hundred, a live burger bar, loaded fries for a festival crowd. Cooked fresh on site.</p>
+      <a class="card__go" href="outdoor-catering.html">See outdoor catering <span aria-hidden="true">→</span></a>
     </div>
-    <div class="rev" style="display:flex;flex-direction:column;gap:.8rem">
-      <a href="catering-v2.html" class="btn btn--yolk btn--lg btn--block">See outdoor catering <span class="btn__arw" aria-hidden="true">→</span></a>
-      <a href="enquire.html" class="btn btn--ghost btn--lg btn--block" style="color:var(--paper);border-color:rgba(255,255,255,.3)">Get a quote</a>
-    </div>
-  </div>
-</section>
+  </article>
+</div>
 
 </main>
 
-<!-- FOOTER -->
-<footer class="ft">
-  <div class="wrap ft-grid">
-    <div>
-      <span class="brand__word">Butty Bros<small>Blackpool</small></span>
-      <p style="max-width:34ch;margin-top:1rem;color:var(--ink-3)">Blackpool's viral butty shop and outdoor event caterer. Proper hot food, cooked fresh on site, for events across the Fylde Coast and Lancashire.</p>
-    </div>
-    <div>
-      <h4>Catering</h4>
-      <ul class="ft-links">
-        <li><a href="catering-v2.html#parties">Parties &amp; celebrations</a></li>
-        <li><a href="catering-v2.html#funerals">Funerals &amp; wakes</a></li>
-        <li><a href="catering-v2.html#workplace">Workplace &amp; corporate</a></li>
-        <li><a href="catering-v2.html#community">Community &amp; sports</a></li>
-        <li><a href="enquire.html">Get a quote</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Find Us</h4>
-      <address>1 Gynn Square<br>Blackpool<br>FY1 2JR<br><br><a href="tel:+447752743158">07752 743158</a><br><a href="https://www.facebook.com/p/Butty-Bros-61575108239572/" rel="noopener" target="_blank">Facebook</a></address>
-    </div>
-  </div>
-  <div class="wrap ft-bottom">
-    <p>© <span data-year>2026</span> Butty Bros · Blackpool, Lancashire</p>
-    <p>5★ Food Hygiene · Open 7 days</p>
+<footer>
+  <div class="wrap foot__base">
+    <span>© <span id="yr">2026</span> Butty Bros · Blackpool</span>
+    <span><a href="index.html">Home</a> · <a href="outdoor-catering.html">Catering</a> · <a href="tel:+447752743158">07752 743158</a></span>
+    <span>5★ Food hygiene · Open 7 days</span>
   </div>
 </footer>
 
-<div class="sticky-quote">
-  <a href="tel:+447752743158" class="btn btn--ghost">Call</a>
-  <a href="enquire.html" class="btn btn--primary">Get a quote →</a>
+<div class="qbar">
+  <a class="btn btn--dark" href="tel:+447752743158">Call</a>
+  <a class="btn btn--ketchup" href="enquire.html">Get a quote →</a>
 </div>
 
-<script>
-document.querySelector('.nav__toggle').addEventListener('click',function(){
-  const links=document.getElementById('nav-links');const open=links.classList.toggle('open');
-  this.setAttribute('aria-expanded',open);
-});
-const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.05});
-document.querySelectorAll('.rev').forEach(el=>io.observe(el));
-const y=document.querySelector('[data-year]');if(y)y.textContent=new Date().getFullYear();
-</script>
+<script src="js/v3.js"></script>
 </body>
 </html>
