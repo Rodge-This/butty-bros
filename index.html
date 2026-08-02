@@ -22,7 +22,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/v3.css?v=2">
+<link rel="stylesheet" href="css/v3.css?v=3">
+<link rel="preload" as="image" href="images/hero-burger-1800.jpg" imagesrcset="images/hero-burger-900.jpg 900w, images/hero-burger-1800.jpg 1800w" imagesizes="100vw" fetchpriority="high">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
 {
@@ -51,11 +52,20 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <nav class="nav" id="nav" aria-label="Primary">
-  <a class="nav__brand" href="index.html" aria-current="page">BUTTY BROS <small>Blackpool</small></a>
+  <a class="nav__brand" href="index.html" aria-current="page">
+    <svg class="brandmark" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="49" fill="#0B0908"/>
+      <circle cx="50" cy="50" r="45" fill="none" stroke="#FAF5EA" stroke-width="1.6"/>
+      <circle cx="50" cy="50" r="40.5" fill="none" stroke="#FAF5EA" stroke-width=".9" stroke-opacity=".55"/>
+      <text x="50" y="65" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="38" fill="#FAF5EA" letter-spacing="-1">BB</text>
+    </svg>
+    <span class="nav__wordmark">BUTTY BROS <small>Blackpool</small></span>
+  </a>
   <div class="nav__links">
     <a href="menu.html">Menu</a>
     <a href="outdoor-catering.html">Outdoor catering</a>
     <a href="#visit">Find us</a>
+    <a class="nav__tel" href="tel:+447752743158">07752 743158</a>
     <a class="pill" href="enquire.html">Get a quote</a>
     <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mmenu">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" stroke-linecap="round"/></svg>
@@ -74,6 +84,11 @@
 <main id="main">
 
 <header class="hero" id="top">
+  <div class="hero__bg">
+    <img src="images/hero-burger-1800.jpg" srcset="images/hero-burger-900.jpg 900w, images/hero-burger-1800.jpg 1800w" sizes="100vw" alt="" width="1800" height="1200" fetchpriority="high" decoding="async">
+  </div>
+  <div class="hero__scrim"></div>
+
   <div class="hero__inner">
     <p class="status"><span class="dot" aria-hidden="true"></span> <span id="open-badge">Gynn Square, Blackpool</span></p>
     <h1>
@@ -89,6 +104,25 @@
       </div>
     </div>
   </div>
+  <div class="hero__seal" aria-hidden="true">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <path id="sealArc" fill="none" d="M37,200 a163,163 0 1,1 326,0 a163,163 0 1,1 -326,0"/>
+      </defs>
+      <circle class="seal__edge" cx="200" cy="200" r="196"/>
+      <g class="seal__ring">
+        <text class="seal__arc"><textPath href="#sealArc" startOffset="1%">OUTDOOR EVENT CATERING &#183; BLACKPOOL &amp; THE FYLDE COAST &#183; COOKED ON SITE &#183;</textPath></text>
+      </g>
+      <circle class="seal__disc" cx="200" cy="200" r="144"/>
+      <circle class="seal__ring1" cx="200" cy="200" r="144"/>
+      <circle class="seal__ring2" cx="200" cy="200" r="136"/>
+      <text class="seal__meta" x="200" y="112" text-anchor="middle">EST. 2025</text>
+      <text class="seal__word" x="200" y="192" text-anchor="middle" font-size="80">BUTTY</text>
+      <text class="seal__word" x="207" y="262" text-anchor="middle" font-size="80" letter-spacing="13">BROS</text>
+      <text class="seal__foot" x="200" y="298" text-anchor="middle">GYNN SQUARE</text>
+    </svg>
+  </div>
+
   <span class="hero__hint" aria-hidden="true">Scroll</span>
 </header>
 
