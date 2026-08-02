@@ -192,6 +192,16 @@ body.menu-open{overflow:hidden}
 .deck > .card:last-child{margin-bottom:clamp(1.2rem,3vh,2rem)}
 .map{border:0;width:100%;height:clamp(140px,20vh,230px);border-radius:14px;margin-top:1.4rem;
   filter:grayscale(.4) contrast(1.06) brightness(.94);background:rgba(250,245,234,.06)}
+.tabs{display:flex;flex-wrap:wrap;gap:clamp(.8rem,2vw,2rem);border-bottom:2px solid currentColor;padding-bottom:1rem;width:100%}
+.tabs button{font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;
+  font-size:clamp(.9rem,1.7vw,1.3rem);line-height:1.1;background:none;border:0;padding:.2rem 0;
+  cursor:pointer;color:inherit;opacity:.4;transition:opacity .25s;text-align:left}
+.tabs button[aria-selected="true"]{opacity:1}
+.tabs button:hover{opacity:.75}
+.tabpane{display:none}
+.tabpane.on{display:block}
+.tabpane h2{margin-bottom:clamp(1rem,2.5vh,1.8rem)}
+.tabpane .card__go{margin-top:clamp(1.2rem,3vh,2rem)}
 .quickmail{display:flex;gap:.7rem;flex-wrap:wrap;width:100%;max-width:32rem;margin-top:1.4rem}
 .quickmail input{flex:1 1 13rem;min-width:0;font-family:var(--body);font-size:1rem;
   padding:1.05rem 1.4rem;border-radius:100px;border:1px solid rgba(255,244,232,.42);

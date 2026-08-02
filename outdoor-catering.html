@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/v3.css?v=4">
+<link rel="stylesheet" href="css/v3.css?v=7">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
 {
@@ -78,43 +78,42 @@
 
 <div class="deck">
 
-<article class="card card--cream" id="parties" aria-label="Parties and celebrations">
-  <div class="card__tag"><span>Occasion 1 of 4</span><span>Birthdays · Anniversaries · Christenings · Garden dos</span></div>
-  <h2>Parties &amp;<br>celebrations</h2>
-  <div class="card__body">
+<article class="card card--cream" aria-label="What we cater">
+  <div class="card__tag"><span>What's the occasion?</span><span>If it needs a crowd fed — that's us</span></div>
+
+  <div class="tabs" role="tablist" aria-label="Type of event">
+    <button type="button" role="tab" id="t-parties" aria-controls="parties" aria-selected="true">Parties &amp; celebrations</button>
+    <button type="button" role="tab" id="t-wakes" aria-controls="wakes" aria-selected="false">Funerals &amp; wakes</button>
+    <button type="button" role="tab" id="t-workplace" aria-controls="workplace" aria-selected="false">Workplace &amp; corporate</button>
+    <button type="button" role="tab" id="t-community" aria-controls="community" aria-selected="false">Community &amp; big days</button>
+  </div>
+
+  <section class="tabpane on" id="parties" role="tabpanel" aria-labelledby="t-parties">
+    <h2>Parties &amp;<br>celebrations</h2>
     <p class="card__copy">The kind of food people leave the dance floor for. A live griddle doing burgers and butties, or hot trays and platters laid on ready — your call. Relaxed, generous, and nobody queues long enough to miss anything.</p>
     <a class="card__go" href="enquire.html">Plan your party <span aria-hidden="true">→</span></a>
-  </div>
-</article>
+  </section>
 
-<article class="card card--toast" id="wakes" aria-label="Funerals and wakes">
-  <div class="card__tag"><span>Occasion 2 of 4</span><span>Handled quietly, with care</span></div>
-  <h2>Funerals<br>&amp; wakes</h2>
-  <div class="card__body">
+  <section class="tabpane" id="wakes" role="tabpanel" aria-labelledby="t-wakes">
+    <h2>Funerals<br>&amp; wakes</h2>
     <p class="card__copy">On a hard day, food is one thing you shouldn't have to think about. We arrive on time, lay on warm, comforting food — sandwiches, hot trays, tea-and-plates simple — serve gently, and clear away without a fuss. One phone call and it's handled.</p>
     <a class="card__go" href="enquire.html">Arrange wake catering <span aria-hidden="true">→</span></a>
-  </div>
-</article>
+  </section>
 
-<article class="card card--cream" id="workplace" aria-label="Workplace and corporate">
-  <div class="card__tag"><span>Occasion 3 of 4</span><span>Breakfast drops · Staff lunches · Site catering · Team days</span></div>
-  <h2>Workplace<br>&amp; corporate</h2>
-  <div class="card__body">
+  <section class="tabpane" id="workplace" role="tabpanel" aria-labelledby="t-workplace">
+    <h2>Workplace<br>&amp; corporate</h2>
     <p class="card__copy">Fed and back to it, no faff. Breakfast butties for the early shift, proper lunches for team days, regular drops for sites and offices. On the dot, invoiced cleanly, and your lot will actually look forward to it.</p>
     <a class="card__go" href="enquire.html">Feed your team <span aria-hidden="true">→</span></a>
-  </div>
-</article>
+  </section>
 
-<article class="card card--butter" id="community" aria-label="Community, sports and festivals">
-  <div class="card__tag"><span>Occasion 4 of 4</span><span>Match days · Club events · Fundraisers · Fairs · Festivals · Markets</span></div>
-  <h2>Community,<br>sports &amp; big days</h2>
-  <div class="card__body">
+  <section class="tabpane" id="community" role="tabpanel" aria-labelledby="t-community">
+    <h2>Community,<br>sports &amp; big days</h2>
     <p class="card__copy">We grew up around here — these are our events too. Honest food at honest prices for club days and fundraisers, and when it's a festival or anything high-volume, we scale up and keep the queue moving from open to close.</p>
     <a class="card__go" href="enquire.html">Cater your event <span aria-hidden="true">→</span></a>
-  </div>
+  </section>
 </article>
 
-<article class="card card--cream" aria-label="What an order looks like">
+<article class="card card--butter" aria-label="What an order looks like">
   <div class="card__tag"><span>What an order looks like</span><span>One clear, all-in price</span></div>
   <div class="split">
     <div>
@@ -172,5 +171,35 @@
 </div>
 
 <script src="js/v3.js"></script>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tabs [role=tab]'));
+  if(!tabs.length) return;
+  function show(id,push){
+    tabs.forEach(function(t){
+      var on=t.getAttribute('aria-controls')===id;
+      t.setAttribute('aria-selected',on?'true':'false');
+      var p=document.getElementById(t.getAttribute('aria-controls'));
+      if(p) p.classList.toggle('on',on);
+    });
+    if(push&&history.replaceState) history.replaceState(null,'','#'+id);
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){show(t.getAttribute('aria-controls'),true)});
+    t.addEventListener('keydown',function(e){
+      var i=tabs.indexOf(t),n=null;
+      if(e.key==='ArrowRight') n=tabs[(i+1)%tabs.length];
+      if(e.key==='ArrowLeft') n=tabs[(i-1+tabs.length)%tabs.length];
+      if(n){e.preventDefault();n.focus();show(n.getAttribute('aria-controls'),true)}
+    });
+  });
+  function fromHash(){
+    var h=location.hash.replace('#','');
+    if(h&&document.getElementById(h)&&document.querySelector('.tabs [aria-controls='+CSS.escape(h)+']')) show(h,false);
+  }
+  fromHash();
+  window.addEventListener('hashchange',fromHash);
+})();
+</script>
 </body>
 </html>
