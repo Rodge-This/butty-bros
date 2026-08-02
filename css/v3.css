@@ -160,7 +160,7 @@ body.menu-open{overflow:hidden}
 
 /* ============================ THE FOLD */
 .deck{width:var(--wrap);margin-inline:auto;padding-bottom:clamp(3rem,8vh,6rem)}
-.card{position:sticky;top:var(--card-top);min-height:calc(100svh - var(--card-top) - 1.5rem);
+.card{position:sticky;top:var(--card-top);min-height:calc(100svh - var(--card-top));
   border-radius:24px;padding:clamp(1.6rem,4vw,3.6rem);
   padding-top:calc(clamp(1.6rem,4vw,3.6rem) + 3.2rem);
   display:flex;flex-direction:column;justify-content:center;gap:clamp(1.4rem,3vh,2.2rem);
@@ -190,7 +190,7 @@ body.menu-open{overflow:hidden}
 .card--ketchup .card__go:hover{background:var(--coal);color:var(--cream)}
 .card--ketchup .big{font-size:clamp(3rem,10vw,8.5rem)}
 .deck > .card:last-child{margin-bottom:clamp(1.2rem,3vh,2rem)}
-.map{border:0;width:100%;aspect-ratio:16/9;border-radius:14px;margin-top:1.8rem;
+.map{border:0;width:100%;height:clamp(140px,20vh,230px);border-radius:14px;margin-top:1.4rem;
   filter:grayscale(.4) contrast(1.06) brightness(.94);background:rgba(250,245,234,.06)}
 .quickmail{display:flex;gap:.7rem;flex-wrap:wrap;width:100%;max-width:32rem;margin-top:1.4rem}
 .quickmail input{flex:1 1 13rem;min-width:0;font-family:var(--body);font-size:1rem;
