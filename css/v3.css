@@ -160,7 +160,7 @@ body.menu-open{overflow:hidden}
 
 /* ============================ THE FOLD */
 .deck{width:var(--wrap);margin-inline:auto;padding-bottom:clamp(3rem,8vh,6rem)}
-.card{position:sticky;top:var(--card-top);min-height:min(80svh,700px);
+.card{position:sticky;top:var(--card-top);min-height:calc(100svh - var(--card-top) - 1.5rem);
   border-radius:24px;padding:clamp(1.6rem,4vw,3.6rem);
   display:flex;flex-direction:column;justify-content:space-between;gap:2rem;
   margin-bottom:clamp(1.2rem,3vh,2rem);
