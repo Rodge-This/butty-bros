@@ -162,15 +162,17 @@ body.menu-open{overflow:hidden}
 .deck{width:var(--wrap);margin-inline:auto;padding-bottom:clamp(3rem,8vh,6rem)}
 .card{position:sticky;top:var(--card-top);min-height:calc(100svh - var(--card-top) - 1.5rem);
   border-radius:24px;padding:clamp(1.6rem,4vw,3.6rem);
-  display:flex;flex-direction:column;justify-content:space-between;gap:2rem;
-  margin-bottom:clamp(1.2rem,3vh,2rem);
+  padding-top:calc(clamp(1.6rem,4vw,3.6rem) + 3.2rem);
+  display:flex;flex-direction:column;justify-content:center;gap:clamp(1.4rem,3vh,2.2rem);
+  margin-bottom:clamp(6rem,32vh,20rem);
   box-shadow:0 -20px 55px rgba(0,0,0,.4);overflow:clip;will-change:transform}
 .card--cream{background:var(--cream);color:var(--ink)}
 .card--butter{background:var(--butter);color:var(--ink)}
 .card--toast{background:var(--toast);color:var(--cream)}
 .card--ketchup{background:var(--ketchup);color:#FFF4E8}
 .card__tag{font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;opacity:.6;
-  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  position:absolute;top:clamp(1.6rem,4vw,3.6rem);left:clamp(1.6rem,4vw,3.6rem);right:clamp(1.6rem,4vw,3.6rem)}
 .card h2{font-family:var(--disp);font-weight:800;text-transform:uppercase;line-height:.9;letter-spacing:-.015em;
   font-size:clamp(2.4rem,7vw,5.8rem)}
 .card__copy{max-width:46ch;font-size:clamp(.98rem,1.3vw,1.1rem);line-height:1.65}
@@ -187,6 +189,15 @@ body.menu-open{overflow:hidden}
 .card--ketchup .card__go{background:#FFF4E8;color:var(--ketchup-deep)}
 .card--ketchup .card__go:hover{background:var(--coal);color:var(--cream)}
 .card--ketchup .big{font-size:clamp(3rem,10vw,8.5rem)}
+.deck > .card:last-child{margin-bottom:clamp(1.2rem,3vh,2rem)}
+.map{border:0;width:100%;aspect-ratio:16/9;border-radius:14px;margin-top:1.8rem;
+  filter:grayscale(.4) contrast(1.06) brightness(.94);background:rgba(250,245,234,.06)}
+.quickmail{display:flex;gap:.7rem;flex-wrap:wrap;width:100%;max-width:32rem;margin-top:1.4rem}
+.quickmail input{flex:1 1 13rem;min-width:0;font-family:var(--body);font-size:1rem;
+  padding:1.05rem 1.4rem;border-radius:100px;border:1px solid rgba(255,244,232,.42);
+  background:rgba(255,244,232,.12);color:#FFF4E8}
+.quickmail input::placeholder{color:rgba(255,244,232,.62)}
+.quickmail input:focus{outline:2px solid #FFF4E8;outline-offset:2px}
 .card--ketchup .big em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px rgba(255,244,232,.55)}
 .tel{font-family:var(--mono);font-size:.78rem;letter-spacing:.16em}
 .tel a{text-decoration:none;border-bottom:1px solid rgba(255,244,232,.5);color:inherit}
