@@ -137,11 +137,17 @@ body.menu-open{overflow:hidden}
 @media(max-width:900px){.nav__tel{display:none}}
 
 /* ---------------- hero seal */
-.hero__seal{position:absolute;top:50%;right:clamp(1rem,3.5vw,3.5rem);transform:translateY(-52%);z-index:3;
+.hero__seal{position:absolute;top:50%;right:0;transform:translateY(-52%);z-index:3;
   width:min(40vw,520px,72vh);pointer-events:none;
   background:radial-gradient(circle,rgba(11,9,8,.55) 0%,rgba(11,9,8,.44) 60%,rgba(11,9,8,0) 74%)}
 .hero__seal svg{width:100%;height:auto;display:block;overflow:visible}
-@media(max-width:1023px){.hero__seal{display:none}}
+@media(max-width:1023px){
+  .hero__seal{position:static;transform:none;background:none;
+    width:clamp(88px,24vw,132px);margin:0 auto clamp(1rem,2.5vh,1.6rem)}
+  .hero__seal .seal__ring,.hero__seal .seal__edge,
+  .hero__seal .seal__meta,.hero__seal .seal__foot{display:none}
+  .hero__seal svg{transform:scale(1.36);transform-origin:center}
+}
 .seal__edge{fill:none;stroke:var(--butter);stroke-opacity:.55;stroke-width:1.3}
 .seal__disc{fill:#0B0908}
 .seal__ring1{fill:none;stroke:var(--cream);stroke-opacity:.95;stroke-width:2.6}
