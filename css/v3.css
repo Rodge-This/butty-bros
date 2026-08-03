@@ -142,6 +142,22 @@ body.menu-open{overflow:hidden}
   .qbar.show{opacity:1;transform:none;pointer-events:auto}
 }
 
+/* ---------------- responsive fold */
+@media(max-width:1023px){
+  .hero{align-items:stretch}
+  .hero__inner{display:flex;flex-direction:column}
+  .hero__foot{margin-top:auto}
+}
+@media(max-width:760px){
+  .card{padding-top:calc(clamp(1.6rem,4vw,3.6rem) + 2.3rem);
+    padding-left:1.3rem;padding-right:1.3rem;
+    margin-bottom:clamp(2.5rem,12vh,7rem)}
+  .menu2{gap:1.4rem}
+  .menu2 h3{font-size:1.45rem}
+  .mrow{padding-block:.62rem}
+  .card h2{font-size:clamp(2rem,9vw,3rem)}
+}
+
 /* ---------------- hero seal */
 .hero__seal{position:absolute;top:50%;right:0;transform:translateY(-52%);z-index:3;
   width:min(40vw,520px,72vh);pointer-events:none;
