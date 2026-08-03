@@ -135,6 +135,12 @@ body.menu-open{overflow:hidden}
   padding-right:clamp(.6rem,1.6vw,1.4rem);border-right:1px solid var(--line-d);transition:color .25s}
 .nav__tel:hover{color:var(--cream)}
 @media(max-width:900px){.nav__tel{display:none}}
+@media(max-width:760px){
+  .nav .pill{display:none}
+  .qbar{opacity:0;transform:translateY(130%);pointer-events:none;
+    transition:opacity .3s var(--ease),transform .38s var(--ease)}
+  .qbar.show{opacity:1;transform:none;pointer-events:auto}
+}
 
 /* ---------------- hero seal */
 .hero__seal{position:absolute;top:50%;right:0;transform:translateY(-52%);z-index:3;

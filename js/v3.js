@@ -15,6 +15,14 @@
     }, {passive:true});
   }
 
+  /* mobile quote bar: only after the hero */
+  const qbar = document.querySelector('.qbar');
+  if(qbar){
+    const syncBar = () => qbar.classList.toggle('show', scrollY > innerHeight * 0.6);
+    addEventListener('scroll', syncBar, {passive:true});
+    syncBar();
+  }
+
   /* mobile overlay menu */
   const burger = document.getElementById('burger');
   const mmenu = document.getElementById('mmenu');
