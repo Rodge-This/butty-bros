@@ -41,7 +41,7 @@
   }
 
   /* the fold: covered cards ease back */
-  const cards = [...document.querySelectorAll('.deck .card')];
+  const cards = [...document.querySelectorAll('.deck .card:not(.card--flow)')];
   if(cards.length > 1 && !rm){
     let ticking = false;
     const update = () => {
