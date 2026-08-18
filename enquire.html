@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/v3.css?v=10">
+<link rel="stylesheet" href="css/v3.css?v=11">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <style>
 .enq{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start;padding-bottom:clamp(3rem,8vh,6rem)}
@@ -49,6 +49,31 @@
 .opts span b{display:block;font-weight:600;font-size:.93rem;line-height:1.3}
 .opts span small{display:block;font-size:.77rem;opacity:.62;margin-top:.18rem;line-height:1.4}
 .opt--wide{grid-column:1/-1}
+
+.pkgtoggle{border-top:2px solid var(--line-l);padding-top:1.6rem;margin-top:1.9rem}
+.trayhint{font-size:.88rem;line-height:1.6;color:rgba(26,20,13,.72);background:#FFF9EC;border:1px solid rgba(240,180,63,.5);border-radius:11px;padding:.8rem .95rem;margin:0 0 1rem}
+.qlist{display:flex;flex-direction:column;gap:.5rem}
+.qrow{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:#FFFDF6;border:1px solid var(--line-l);border-radius:11px;padding:.7rem .85rem;transition:border-color .15s,background .15s}
+.qrow.on{border-color:var(--butter);background:#FFF9EC}
+.qrow__name b{display:block;font-weight:600;font-size:.93rem;line-height:1.3}
+.qrow__name small{display:block;font-size:.77rem;opacity:.62;margin-top:.15rem;line-height:1.4}
+.qty{display:flex;align-items:center;gap:.3rem;flex-shrink:0}
+.qty__btn{width:32px;height:32px;border-radius:8px;border:1px solid var(--line-l);background:#fff;color:var(--ink);font-size:1.15rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:var(--body);transition:background .15s,border-color .15s}
+.qty__btn:hover{background:var(--coal);color:var(--cream);border-color:var(--coal)}
+.qty__in{width:52px;text-align:center;padding:.45rem .2rem!important;border-radius:8px;font-weight:700;-moz-appearance:textfield;font-size:.95rem!important}
+.qty__in::-webkit-outer-spin-button,.qty__in::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.traytotal{font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ketchup);margin:.9rem 0 0;min-height:1em;font-weight:700}
+.thanks{text-align:center;padding:clamp(2.4rem,7vw,4.4rem) clamp(1.4rem,4vw,3rem);background:var(--cream);color:var(--ink);border-radius:24px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.thanks__mark{color:var(--sage);margin-bottom:1.2rem}
+.thanks h2{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(1.9rem,5vw,3.2rem);line-height:.92;letter-spacing:-.015em}
+.thanks h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--ketchup)}
+.thanks p{max-width:44ch;margin:1.2rem auto 0;font-size:1rem;line-height:1.65;color:rgba(26,20,13,.75)}
+.thanks p a{color:var(--ink);font-weight:700;border-bottom:2px solid var(--butter)}
+.thanks__cta{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;margin-top:1.9rem}
+.thanks__primary{background:var(--coal);color:var(--cream);padding:1.05rem 1.9rem}
+.thanks__primary:hover{background:var(--ketchup);color:#fff}
+.thanks__secondary{background:transparent;color:var(--ink);padding:1.05rem 1.9rem;border:1px solid rgba(26,20,13,.28)}
+.thanks__secondary:hover{background:rgba(26,20,13,.07);border-color:rgba(26,20,13,.5)}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.buttybros.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Get a quote", "item": "https://www.buttybros.co.uk/enquire.html"}]}
@@ -169,27 +194,86 @@
       </div>
     </div>
     <p class="budgetnote">Not sure what things cost? No bother &mdash; tell us roughly what you'd like to spend and we'll build something that works. If you'd rather just talk it through, ring <a href="tel:+447752743158">07752 743158</a>.</p>
-    <div class="pkg">
+    <div class="field pkgtoggle">
+      <label for="f-build">Want to pick your menu now?</label>
+      <select id="f-build" name="buildnow">
+        <option value="no" selected>No &mdash; just get in touch and we'll talk it through</option>
+        <option value="yes">Yes &mdash; let me choose from the menu</option>
+      </select>
+    </div>
+
+    <div class="pkg" id="pkg" hidden>
       <div class="pkg__hd">
         <h2>Build your package</h2>
-        <p>Pick whatever takes your fancy &mdash; or skip it entirely and just tell us what you're after. Nothing here is binding, it just means we can come back with a proper price first time.</p>
+        <p>Pick whatever takes your fancy. Nothing here is binding &mdash; it just means we can come back with a proper price first time.</p>
       </div>
 
       <fieldset class="pkgset">
-        <legend>Tray bakes <span>one tray serves 9</span></legend>
-        <div class="opts">
-          <label><input type="checkbox" name="mains" value="lasagne"><span><b>Lasagne</b><small>Beef rag&ugrave;, b&eacute;chamel, cheese &middot; garlic bread</small></span></label>
-          <label><input type="checkbox" name="mains" value="lasagne-veg"><span><b>Lasagne &mdash; veggie</b><small>With garlic bread</small></span></label>
-          <label><input type="checkbox" name="mains" value="chilli"><span><b>Slow cooked chilli</b><small>Aromatic rice, sour cream</small></span></label>
-          <label><input type="checkbox" name="mains" value="chilli-veg"><span><b>Chilli &mdash; veggie</b><small>Rice, sour cream</small></span></label>
-          <label><input type="checkbox" name="mains" value="curry"><span><b>Chicken curry</b><small>Basmati rice, naan</small></span></label>
-          <label><input type="checkbox" name="mains" value="pie"><span><b>Cheese &amp; onion pie</b><small>Mixed pickles</small></span></label>
-          <label><input type="checkbox" name="mains" value="hotpot"><span><b>Lancashire hotpot</b><small>Pickled red cabbage</small></span></label>
+        <legend>Tray bakes <span>sold by the tray</span></legend>
+        <p class="trayhint"><b>One tray feeds 9 people.</b> Trays come whole, so pick how many of each you need &mdash; we'll round up to cover your headcount if you're between sizes.</p>
+        <div class="qlist">
+          <div class="qrow">
+            <span class="qrow__name"><b>Lasagne</b><small>Beef rag&ugrave;, b&eacute;chamel, cheese &middot; garlic bread</small></span>
+            <span class="qty">
+              <button type="button" class="qty__btn" data-step="-1" aria-label="One fewer tray">&minus;</button>
+              <input class="qty__in" type="number" name="tray_lasagne" min="0" max="40" step="1" value="0" inputmode="numeric" aria-label="Trays of Lasagne">
+              <button type="button" class="qty__btn" data-step="1" aria-label="One more tray">+</button>
+            </span>
+          </div>
+          <div class="qrow">
+            <span class="qrow__name"><b>Lasagne &mdash; veggie</b><small>With garlic bread</small></span>
+            <span class="qty">
+              <button type="button" class="qty__btn" data-step="-1" aria-label="One fewer tray">&minus;</button>
+              <input class="qty__in" type="number" name="tray_lasagne-veg" min="0" max="40" step="1" value="0" inputmode="numeric" aria-label="Trays of Lasagne  veggie">
+              <button type="button" class="qty__btn" data-step="1" aria-label="One more tray">+</button>
+            </span>
+          </div>
+          <div class="qrow">
+            <span class="qrow__name"><b>Slow cooked chilli</b><small>Aromatic rice, sour cream</small></span>
+            <span class="qty">
+              <button type="button" class="qty__btn" data-step="-1" aria-label="One fewer tray">&minus;</button>
+              <input class="qty__in" type="number" name="tray_chilli" min="0" max="40" step="1" value="0" inputmode="numeric" aria-label="Trays of Slow cooked chilli">
+              <button type="button" class="qty__btn" data-step="1" aria-label="One more tray">+</button>
+            </span>
+          </div>
+          <div class="qrow">
+            <span class="qrow__name"><b>Chilli &mdash; veggie</b><small>Rice, sour cream</small></span>
+            <span class="qty">
+              <button type="button" class="qty__btn" data-step="-1" aria-label="One fewer tray">&minus;</button>
+              <input class="qty__in" type="number" name="tray_chilli-veg" min="0" max="40" step="1" value="0" inputmode="numeric" aria-label="Trays of Chilli  veggie">
+              <button type="button" class="qty__btn" data-step="1" aria-label="One more tray">+</button>
+            </span>
+          </div>
+          <div class="qrow">
+            <span class="qrow__name"><b>Chicken curry</b><small>Basmati rice, naan</small></span>
+            <span class="qty">
+              <button type="button" class="qty__btn" data-step="-1" aria-label="One fewer tray">&minus;</button>
+              <input class="qty__in" type="number" name="tray_curry" min="0" max="40" step="1" value="0" inputmode="numeric" aria-label="Trays of Chicken curry">
+              <button type="button" class="qty__btn" data-step="1" aria-label="One more tray">+</button>
+            </span>
+          </div>
+          <div class="qrow">
+            <span class="qrow__name"><b>Cheese &amp; onion pie</b><small>Mixed pickles</small></span>
+            <span class="qty">
+              <button type="button" class="qty__btn" data-step="-1" aria-label="One fewer tray">&minus;</button>
+              <input class="qty__in" type="number" name="tray_pie" min="0" max="40" step="1" value="0" inputmode="numeric" aria-label="Trays of Cheese and onion pie">
+              <button type="button" class="qty__btn" data-step="1" aria-label="One more tray">+</button>
+            </span>
+          </div>
+          <div class="qrow">
+            <span class="qrow__name"><b>Lancashire hotpot</b><small>Pickled red cabbage</small></span>
+            <span class="qty">
+              <button type="button" class="qty__btn" data-step="-1" aria-label="One fewer tray">&minus;</button>
+              <input class="qty__in" type="number" name="tray_hotpot" min="0" max="40" step="1" value="0" inputmode="numeric" aria-label="Trays of Lancashire hotpot">
+              <button type="button" class="qty__btn" data-step="1" aria-label="One more tray">+</button>
+            </span>
+          </div>
         </div>
+        <p class="traytotal" id="traytotal" aria-live="polite"></p>
       </fieldset>
 
       <fieldset class="pkgset">
-        <legend>Sides</legend>
+        <legend>Sides <span>Charged per head</span></legend>
         <div class="opts">
           <label><input type="checkbox" name="sides" value="caesar"><span><b>Caesar salad</b></span></label>
           <label><input type="checkbox" name="sides" value="coleslaw"><span><b>Red cabbage coleslaw</b></span></label>
@@ -199,9 +283,8 @@
           <label><input type="checkbox" name="sides" value="garlic"><span><b>Garlic bread baguettes</b></span></label>
         </div>
       </fieldset>
-
       <fieldset class="pkgset">
-        <legend>Sandwich platters</legend>
+        <legend>Sandwich platters <span>Charged per head</span></legend>
         <div class="opts">
           <label><input type="checkbox" name="sandwiches" value="ham"><span><b>Ham &amp; mustard</b></span></label>
           <label><input type="checkbox" name="sandwiches" value="cheese"><span><b>Mixed cheese &amp; onion</b></span></label>
@@ -210,9 +293,8 @@
           <label><input type="checkbox" name="sandwiches" value="beef"><span><b>Beef, onion &amp; horseradish</b></span></label>
         </div>
       </fieldset>
-
       <fieldset class="pkgset">
-        <legend>Bits on the side</legend>
+        <legend>Bits on the side <span>Better value when you pick three or more</span></legend>
         <div class="opts">
           <label><input type="checkbox" name="extras" value="sausage-roll"><span><b>Sausage rolls</b></span></label>
           <label><input type="checkbox" name="extras" value="sausage-roll-veg"><span><b>Sausage rolls &mdash; veggie</b></span></label>
@@ -223,7 +305,6 @@
           <label><input type="checkbox" name="snacks" value="snacks"><span><b>Bar snacks</b><small>Lancashire crisps, nuts</small></span></label>
         </div>
       </fieldset>
-
       <fieldset class="pkgset">
         <legend>Grazing table</legend>
         <div class="opts">
@@ -239,6 +320,18 @@
     <button class="btn btn--ketchup" type="submit" style="width:100%;justify-content:center;padding:1.15rem">Send enquiry <span class="arw" aria-hidden="true">→</span></button>
     <p class="form-msg" role="status"></p>
   </form>
+
+  <div class="thanks" id="thanks" hidden role="status" aria-live="polite">
+    <div class="thanks__mark" aria-hidden="true">
+      <svg viewBox="0 0 52 52" width="54" height="54"><circle cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="2.5" opacity=".35"/><path d="M15 27l8 8 15-16" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h2>Thanks &mdash; that's<br><em>with us.</em></h2>
+    <p>We've got your request and we'll be in touch soon, usually the same day. If it's urgent, give us a ring on <a href="tel:+447752743158">07752 743158</a>.</p>
+    <div class="thanks__cta">
+      <a class="btn thanks__primary" href="index.html">Back to home</a>
+      <a class="btn thanks__secondary" href="outdoor-catering.html">See the catering menu</a>
+    </div>
+  </div>
 </section>
 
 </main>
@@ -251,7 +344,7 @@
   </div>
 </footer>
 
-<script src="js/v3.js?v=3"></script>
+<script src="js/v3.js?v=4"></script>
 <script>
 (function(){
   var e=new URLSearchParams(location.search).get('email');

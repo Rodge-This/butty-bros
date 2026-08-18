@@ -125,6 +125,18 @@
         let data = {};
         try{ data = await res.json(); }catch(e){}
         if(res.ok && data.ok !== false){
+          const thanks = document.getElementById('thanks');
+          if(thanks){
+            form.hidden = true;
+            const aside = document.querySelector('.enq__aside');
+            if(aside) aside.hidden = true;
+            thanks.hidden = false;
+            const sec = document.querySelector('.enq');
+            if(sec) sec.style.gridTemplateColumns = '1fr';
+            thanks.scrollIntoView({behavior:'smooth', block:'center'});
+            history.replaceState(null,'','?sent=1');
+            return;
+          }
           msg.textContent = "Sent — we'll be back to you shortly, usually the same day.";
           form.reset();
         }else{
@@ -138,6 +150,63 @@
     });
   }
 
+
+
+  /* ---- enquiry: optional menu builder, tray steppers, thank-you panel ---- */
+  const pkg = document.getElementById('pkg');
+  const buildSel = document.getElementById('f-build');
+  if(pkg && buildSel){
+    const syncPkg = () => {
+      const on = buildSel.value === 'yes';
+      pkg.hidden = !on;
+      if(on) pkg.querySelector('.qty__in')?.focus({preventScroll:true});
+    };
+    buildSel.addEventListener('change', syncPkg);
+    syncPkg();
+  }
+
+  /* tray steppers — one tray feeds 9 */
+  const trayTotal = document.getElementById('traytotal');
+  const trayInputs = [...document.querySelectorAll('.qty__in')];
+  if(trayInputs.length){
+    const SERVES = 9;
+    const headEl = document.getElementById('f-count');
+    const clampVal = (el) => {
+      let n = parseInt(el.value, 10);
+      if(isNaN(n) || n < 0) n = 0;
+      const max = parseInt(el.max, 10) || 40;
+      if(n > max) n = max;
+      el.value = n;
+      el.closest('.qrow')?.classList.toggle('on', n > 0);
+      return n;
+    };
+    const paintTrays = () => {
+      const total = trayInputs.reduce((a, el) => a + clampVal(el), 0);
+      if(!trayTotal) return;
+      if(!total){ trayTotal.textContent = ''; return; }
+      const feeds = total * SERVES;
+      let msg = total + (total === 1 ? ' tray' : ' trays') + ' · feeds ' + feeds;
+      const heads = parseInt(headEl && headEl.value, 10);
+      if(heads > 0){
+        if(feeds < heads) msg += ' · ' + (heads - feeds) + ' short of your ' + heads;
+        else if(feeds >= heads) msg += ' · covers your ' + heads;
+      }
+      trayTotal.textContent = msg;
+    };
+    trayInputs.forEach(el => {
+      el.addEventListener('input', paintTrays);
+      el.addEventListener('change', paintTrays);
+    });
+    document.querySelectorAll('.qty__btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const el = btn.parentElement.querySelector('.qty__in');
+        el.value = (parseInt(el.value,10) || 0) + Number(btn.dataset.step);
+        paintTrays();
+      });
+    });
+    if(headEl) headEl.addEventListener('input', paintTrays);
+    paintTrays();
+  }
 
   /* enquiry form: show the day of the week as soon as a date is picked */
   const dateEl = document.getElementById('f-date');
