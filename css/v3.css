@@ -429,3 +429,88 @@ footer{padding:3rem 0 2.4rem}
   .hero__seal { width: min(38vw, 132px); }
   .hero h1 { font-size: clamp(2.4rem, 12vw, 3.4rem); }
 }
+
+/* Standalone menu sheet — long-form content, never in the sticky stack */
+.menusheet{width:var(--wrap);margin:0 auto clamp(2.5rem,7vh,4.5rem);
+  background:var(--cream);color:var(--ink);border-radius:24px;
+  padding:clamp(1.6rem,4vw,3.6rem);box-shadow:0 -20px 55px rgba(0,0,0,.4)}
+.menusheet .card__tag{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;opacity:.6;
+  padding-bottom:1.2rem;border-bottom:1px solid var(--line-l);margin-bottom:1.6rem}
+.menusheet h2{font-family:var(--disp);font-weight:800;text-transform:uppercase;
+  line-height:.9;letter-spacing:-.015em}
+.menusheet .card__go{background:var(--coal);color:var(--cream)}
+.menusheet .card__go:hover{background:var(--ketchup);color:#fff}
+
+/* location card: links row */
+.visit__links{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
+.card--toast .card__go--quiet{background:transparent!important;color:var(--cream)!important;
+  border:1px solid var(--line-d)}
+.card--toast .card__go--quiet:hover{background:var(--cream)!important;color:var(--ink)!important}
+
+/* =============================================================
+   STACK FIT
+   Every card in the sticky deck must fit its slot, or the next
+   card slides over content you haven't read yet. No JS toggling —
+   these are stable rules so nothing changes mid-scroll.
+   ============================================================= */
+
+/* location card was the worst offender on every size */
+#visit h2{font-size:clamp(1.9rem,4.6vw,3.2rem)}
+#visit .card__copy{margin-top:1rem;font-size:clamp(.92rem,1.15vw,1rem);line-height:1.6}
+#visit .facts{margin-top:1.1rem}
+#visit .facts div{padding-block:.5rem}
+#visit .visit__links{margin-top:1.1rem}
+
+@media(max-width:1023px){
+  #visit h2{font-size:clamp(1.7rem,6.6vw,2.4rem)}
+  #visit .card__copy{font-size:.93rem;margin-top:.8rem}
+  #visit .facts div{padding-block:.42rem;font-size:.9rem}
+
+  /* docket card: 6 printed lines is too many for a phone slot */
+  .docket{margin-top:.6rem}
+  .dline{padding-block:.5rem;font-size:.85rem}
+  .dline small{font-size:.72rem}
+  .card--butter h2,.card--toast h2{font-size:clamp(1.7rem,6.6vw,2.4rem)}
+}
+
+/* Very short screens (iPhone SE etc): the slot is ~600px and nothing
+   real fits. Turn the whole stack off — consistently, not per-card —
+   so it scrolls like a normal page instead of glitching. */
+@media (max-height: 720px) and (max-width: 1023px){
+  .deck .card{
+    position:static;min-height:0;justify-content:flex-start;overflow:visible;
+    margin-bottom:clamp(1.4rem,4vh,2.4rem);transform:none!important;filter:none!important;
+    will-change:auto}
+}
+
+/* --- final stack trims so both cards clear their slot on phones --- */
+@media(max-width:1023px){
+  /* the two buttons were wrapping onto two rows (126px) */
+  #visit .visit__links{gap:.5rem;margin-top:.9rem}
+  #visit .visit__links .card__go{padding:.7rem 1.1rem;font-size:.82rem;flex:1 1 auto;justify-content:center}
+  #visit .facts div{padding-block:.36rem}
+  #visit .card__copy{font-size:.9rem;line-height:1.55;margin-top:.7rem}
+
+  /* docket card: .split was 772px on its own */
+  .card--butter .split{gap:1rem}
+  .card--butter .split h2{font-size:clamp(1.6rem,6.2vw,2.2rem)!important;line-height:.95}
+  .card--butter .split .card__copy{font-size:.88rem;line-height:1.5;margin-top:.7rem!important}
+  .docket{margin-top:.4rem}
+  .docket__hd{padding-block:.55rem}
+  .dline{padding-block:.4rem;font-size:.8rem}
+  .dline small{font-size:.68rem}
+}
+
+@media(max-width:1023px){
+  /* the +3.2rem top pad clears the card tag; 2.4rem is enough on phones */
+  .deck .card{padding-top:calc(clamp(1.6rem,4vw,3.6rem) + 2.3rem);gap:clamp(1rem,2.2vh,1.5rem)}
+  .dline{padding-block:.34rem}
+  .docket__hd{padding-block:.45rem}
+}
+
+@media(max-width:1023px){
+  /* last 5px on the docket card */
+  .card--butter .split .card__copy{font-size:.85rem;margin-top:.5rem!important}
+  .dline{padding-block:.3rem}
+}

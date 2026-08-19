@@ -41,26 +41,15 @@
   }
 
   /* the fold: covered cards ease back */
-  /* Any card taller than the space it sticks in can't work in the stack —
-     the next card slides over the bottom of it before you can read it.
-     Detect that and let those cards scroll normally instead. */
-  const autoFlow = () => {
-    const top = parseFloat(getComputedStyle(document.documentElement)
-      .getPropertyValue('--card-top')) || 80;
-    document.querySelectorAll('.deck .card').forEach(c => {
-      if (c.dataset.flowLocked === '1') return;      // hand-set .card--flow stays put
-      const fits = c.scrollHeight <= (innerHeight - top) + 4;
-      c.classList.toggle('card--flow', !fits);
-    });
-  };
-  document.querySelectorAll('.deck .card--flow').forEach(c => c.dataset.flowLocked = '1');
-  autoFlow();
-  addEventListener('resize', autoFlow, {passive:true});
-
   const cards = [...document.querySelectorAll('.deck .card:not(.card--flow)')];
+  const stackOn = () => cards.length > 1 && getComputedStyle(cards[0]).position === 'sticky';
   if(cards.length > 1 && !rm){
     let ticking = false;
     const update = () => {
+      if(!stackOn()){
+        cards.forEach(c => { c.style.transform=''; c.style.filter=''; });
+        ticking = false; return;
+      }
       cards.forEach((c,i) => {
         if(i === cards.length-1) return;
         if(c.classList.contains('card--flow')){ c.style.transform=''; c.style.filter=''; return; }
@@ -72,11 +61,7 @@
       ticking = false;
     };
     addEventListener('scroll', () => { if(!ticking){ requestAnimationFrame(update); ticking = true; } }, {passive:true});
-    addEventListener('resize', () => {
-      autoFlow();
-      cards.forEach(c => { if (c.classList.contains('card--flow')) { c.style.transform = ''; c.style.filter = ''; } });
-      update();
-    }, {passive:true});
+    addEventListener('resize', update, {passive:true});
     update();
   }
 
