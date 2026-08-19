@@ -514,3 +514,10 @@ footer{padding:3rem 0 2.4rem}
   .card--butter .split .card__copy{font-size:.85rem;margin-top:.5rem!important}
   .dline{padding-block:.3rem}
 }
+
+/* shop card on ketchup: lists and buttons need light-on-dark treatment */
+.card--ketchup .mlist{border-top-color:rgba(255,244,232,.28)}
+.card--ketchup .mlist li{border-bottom-color:rgba(255,244,232,.28)}
+.card--ketchup .mlist li span:last-child{opacity:.72}
+.card--ketchup .card__go{background:var(--cream);color:var(--ink)}
+.card--ketchup .card__go:hover{background:var(--coal);color:var(--cream)}
