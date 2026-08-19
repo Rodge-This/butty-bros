@@ -130,6 +130,12 @@ body.menu-open{overflow:hidden}
 .nav{padding:.85rem clamp(1.2rem,4vw,3rem);background:rgba(19,17,16,.55);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-d)}
 .nav__brand{gap:.75rem}
 .brandmark{width:38px;height:38px;flex:0 0 38px}
+.bm__spin{transform-box:view-box;transform-origin:50% 50%}
+@media(prefers-reduced-motion:no-preference){
+  .bm__spin{animation:bmSpin 18s linear infinite}
+  @keyframes bmSpin{to{transform:rotate(360deg)}}
+  .nav__brand:hover .bm__spin{animation-duration:3s}
+}
 .nav__wordmark{display:flex;flex-direction:column;line-height:1}
 .nav__wordmark small{margin-top:.28rem}
 .nav__tel{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:var(--milk);text-decoration:none;
@@ -356,4 +362,52 @@ footer{padding:3rem 0 2.4rem}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .anim-in,.mmenu a{opacity:1;transform:none}
   .dline{opacity:1;transform:none}
+}
+
+/* ---------------------------------------------------------------
+   TOUCH TARGETS
+   Google/WCAG want >=24px, ideally 44px. Several links (phone
+   numbers especially) rendered at 11-16px tall. The ::after trick
+   extends the tappable area without shifting any layout.
+   --------------------------------------------------------------- */
+@media (pointer: coarse) {
+  .nav__tel, .foot__base a, .facts a, .tel a, .mmenu__meta a,
+  .chipnav a, .thanks p a, .budgetnote a, .mrow a {
+    position: relative;
+  }
+  .nav__tel::after, .foot__base a::after, .facts a::after, .tel a::after,
+  .mmenu__meta a::after, .chipnav a::after, .thanks p a::after,
+  .budgetnote a::after, .mrow a::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    min-height: 44px;
+    height: 100%;
+  }
+  /* give the tab buttons and chips real height */
+  .tabs button { padding-block: .75rem; }
+  .chipnav a { padding-block: .85rem; }
+  .nav__links > a { padding-block: .7rem; }
+  /* nothing below 11px on touch screens */
+  .hero__hint, .mmenu__meta, .foot__base, .card__tag,
+  .mblk__sub, .traytotal, .opt, .pkgset legend, .field label {
+    font-size: max(0.69rem, 11px);
+  }
+  .opt { font-size: max(0.62rem, 10px); }
+}
+
+/* the phone number is the money link — make it obvious and big on mobile */
+@media (max-width: 720px) {
+  .tel a, .facts a[href^="tel:"] { display: inline-block; padding: .35rem 0; }
+}
+
+/* no utility text below 11px on phones — readability floor */
+@media (max-width: 720px) {
+  .card__tag, .foot__base, .mmenu__meta, .status, .note,
+  .mlist li span:last-child, .mrow .sub, .chipnav a, .hero__hint {
+    font-size: max(0.7rem, 11px);
+  }
+  .card__tag { letter-spacing: .14em; }
 }

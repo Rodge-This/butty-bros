@@ -16,6 +16,10 @@
 <meta property="og:description" content="Breakfast butties, smash burgers, hot barms, loaded fries and toasties at 1 Gynn Square, Blackpool. Cooked fresh to order, seven days a week.">
 <meta property="og:url" content="https://www.buttybros.co.uk/menu.html">
 <meta property="og:image" content="https://www.buttybros.co.uk/images/og-menu.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://www.buttybros.co.uk/images/og-menu.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:locale" content="en_GB">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +58,7 @@
   <a class="nav__brand" href="index.html">
     <svg class="brandmark" viewBox="0 0 100 100" aria-hidden="true">
       <circle cx="50" cy="50" r="49" fill="#0B0908"/>
-      <circle cx="50" cy="50" r="45" fill="none" stroke="#FAF5EA" stroke-width="1.6"/>
+      <circle class="bm__spin" cx="50" cy="50" r="45" fill="none" stroke="#F0B43F" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="34 12 20 12 34 12 20 12"/>
       <circle cx="50" cy="50" r="40.5" fill="none" stroke="#FAF5EA" stroke-width=".9" stroke-opacity=".55"/>
       <text x="50" y="65" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="38" fill="#FAF5EA" letter-spacing="-1">BB</text>
     </svg>
@@ -93,12 +97,15 @@
   <div class="chipnav__track">
     <a href="#breakfast">Breakfast</a>
     <a href="#trays">Trays</a>
+    <a href="#bfextras">Breakfast extras</a>
     <a href="#burgers">Smash burgers</a>
+    <a href="#chicken">Chicken burgers</a>
     <a href="#barms">Hot barms</a>
     <a href="#sandwiches">Sandwiches</a>
     <a href="#specials">Specials</a>
     <a href="#toasties">Toasties</a>
-    <a href="#chips">Chips &amp; fries</a>
+    <a href="#chips">Loaded fries</a>
+    <a href="#kids">Kids</a>
     <a href="#pies">Pies</a>
     <a href="#drinks">Drinks &amp; extras</a>
   </div>
@@ -108,92 +115,137 @@
   <div class="mgrid">
 
     <div class="mcat" id="breakfast">
-      <div class="mcat__hd"><h2>Breakfast sandwiches</h2><p>On toast, barm or batton</p></div>
+      <div class="mcat__hd"><h2>Breakfast sandwiches</h2><p>Served all day &middot; on toast or barm &middot; <b>baton +50p</b></p></div>
       <div class="mrow"><span>Sausage, bacon &amp; egg</span><span class="fill"></span><span class="p">£5.00</span></div>
       <div class="mrow"><span>Bacon &amp; egg</span><span class="fill"></span><span class="p">£4.50</span></div>
       <div class="mrow"><span>Sausage &amp; egg</span><span class="fill"></span><span class="p">£4.50</span></div>
       <div class="mrow"><span>Bacon &amp; sausage</span><span class="fill"></span><span class="p">£4.50</span></div>
       <div class="mrow"><span>Homemade square sausage</span><span class="fill"></span><span class="p">£4.50</span></div>
       <div class="mrow"><span>Spam &amp; egg</span><span class="fill"></span><span class="p">£4.50</span></div>
-      <div class="mrow"><span>Veg sausage &amp; egg<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£4.00</span></div>
+      <div class="mrow"><span>Spam</span><span class="fill"></span><span class="p">£4.00</span></div>
+      <div class="mrow"><span>Vegetarian sausage &amp; egg<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£4.00</span></div>
       <div class="mrow"><span>Back bacon</span><span class="fill"></span><span class="p">£3.90</span></div>
       <div class="mrow"><span>Cumberland sausage</span><span class="fill"></span><span class="p">£3.90</span></div>
       <div class="mrow"><span>2 fried eggs<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£3.50</span></div>
       <div class="mrow"><span>Vegetarian sausage<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£3.50</span></div>
+      <div class="mrow"><span>&ldquo;Triple decker breakfast club&rdquo;</span><span class="fill"></span><span class="p">£7.00</span><span class="sub">Toast, sausage &amp; beans, a layer of fried bread, bacon &amp; fried egg, finished with another slice of toast.</span></div>
     </div>
 
     <div class="mcat" id="trays">
       <div class="mcat__hd"><h2>Breakfast trays</h2><p>Proper cooked breakfasts, boxed up hot</p></div>
-      <div class="mrow"><span>Scottish breakfast</span><span class="fill"></span><span class="p">£9.00</span><span class="sub">The big one — all the traditional favourites, Scottish style.</span></div>
-      <div class="mrow"><span>Large breakfast</span><span class="fill"></span><span class="p">£8.00</span></div>
-      <div class="mrow"><span>2 sausages, 2 eggs, chips, beans &amp; bread</span><span class="fill"></span><span class="p">£6.50</span></div>
-      <div class="mrow"><span>Small breakfast</span><span class="fill"></span><span class="p">£6.20</span></div>
-      <div class="mrow"><span>Vegetarian breakfast<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£6.00</span></div>
+      <div class="mrow"><span>Scottish breakfast</span><span class="fill"></span><span class="p">£8.50</span><span class="sub">Lorne sausage, haggis, tattie scone, bacon, black pudding, fried egg, mushrooms, beans or tomato &amp; toast.</span></div>
+      <div class="mrow"><span>Large breakfast</span><span class="fill"></span><span class="p">£8.00</span><span class="sub">2 bacon, 2 sausage, 2 eggs, hash brown, mushrooms, tomato or beans, 2 toast.</span></div>
+      <div class="mrow"><span>All day breakfast</span><span class="fill"></span><span class="p">£6.50</span><span class="sub">1 sausage, 1 bacon, 2 fried eggs, chips, beans, slice of bread &amp; butter.</span></div>
+      <div class="mrow"><span>Small breakfast</span><span class="fill"></span><span class="p">£5.70</span><span class="sub">1 bacon, 1 sausage, 1 egg, mushrooms, tomato or beans, 1 toast.</span></div>
+      <div class="mrow"><span>Vegetarian breakfast<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£5.50</span><span class="sub">2 sausage, 2 eggs, mushrooms, beans, tomato, hash brown, 1 toast.</span></div>
+    </div>
+
+    <div class="mcat" id="bfextras">
+      <div class="mcat__hd"><h2>Breakfast extras</h2><p>Add to any breakfast</p></div>
+      <div class="mrow"><span>1 square sausage</span><span class="fill"></span><span class="p">£1.50</span></div>
+      <div class="mrow"><span>2 toast &amp; jam</span><span class="fill"></span><span class="p">£1.50</span></div>
+      <div class="mrow"><span>1 spam</span><span class="fill"></span><span class="p">£1.25</span></div>
+      <div class="mrow"><span>1 sausage</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>1 bacon</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>1 egg</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>2 black pudding</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>2 haggis</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>2 tattie scones</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>2 hash brown</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>2 tomato</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>2 toast</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>Mushrooms</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>Fried bread</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>Heinz beans</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>Cheese</span><span class="fill"></span><span class="p">£0.80</span></div>
     </div>
 
     <div class="mcat" id="burgers">
-      <div class="mcat__hd"><h2>Smash burgers</h2><p>Smashed thin, seared hard, stacked right</p></div>
-      <div class="mrow"><span>Brunch burger</span><span class="fill"></span><span class="p">£7.50</span><span class="sub">A burger and breakfast in one.</span></div>
-      <div class="mrow"><span>Spicy burger<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.95</span></div>
-      <div class="mrow"><span>Chilli cheese burger<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.75</span></div>
-      <div class="mrow"><span>Blue cheese smash</span><span class="fill"></span><span class="p">£6.00</span></div>
-      <div class="mrow"><span>Southern fried chicken burger</span><span class="fill"></span><span class="p">£6.00</span></div>
-      <div class="mrow"><span>Double burger</span><span class="fill"></span><span class="p">£5.00</span></div>
-      <div class="mrow"><span>Single burger</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mcat__hd"><h2>Smash burgers</h2><p>Toasted seeded brioche, lettuce, toms, pickles &amp; Butty Bros burger sauce</p></div>
+      <div class="mrow"><span>Brunch burger</span><span class="fill"></span><span class="p">£7.25</span><span class="sub">Smashed pattie, sausage, bacon, fried egg, cheese, hash brown.</span></div>
+      <div class="mrow"><span>Spicy burger<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.75</span><span class="sub">2 smashed patties, chorizo, jalape&ntilde;os, cheese, hot chilli sauce.</span></div>
+      <div class="mrow"><span>Chilli cheese burger<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.50</span><span class="sub">2 smashed patties, chilli con carne, cheese, crispy onions.</span></div>
+      <div class="mrow"><span>Blue cheese burger</span><span class="fill"></span><span class="p">£6.50</span><span class="sub">2 smashed patties, cheddar, blue cheese, caramelised onions, mayo.</span></div>
+      <div class="mrow"><span>Double</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mrow"><span>Single</span><span class="fill"></span><span class="p">£4.00</span></div>
+      <div class="mrow"><span>Add cheese</span><span class="fill"></span><span class="p">£0.80</span></div>
+      <div class="mrow"><span>Add bacon</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>Add fried onions</span><span class="fill"></span><span class="p">£0.50</span></div>
+      <div class="mrow"><span>Add chips &amp; coleslaw</span><span class="fill"></span><span class="p">£2.00</span></div>
+    </div>
+
+    <div class="mcat" id="chicken">
+      <div class="mcat__hd"><h2>Chicken burgers</h2></div>
+      <div class="mrow"><span>Hunters</span><span class="fill"></span><span class="p">£6.75</span><span class="sub">Bacon, mozzarella, cheese, BBQ sauce.</span></div>
+      <div class="mrow"><span>Spicy<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.75</span><span class="sub">Chorizo, jalape&ntilde;os, hot chilli sauce.</span></div>
+      <div class="mrow"><span>Southern fried</span><span class="fill"></span><span class="p">£5.95</span><span class="sub">Lettuce, tomato, cheese, mayo.</span></div>
     </div>
 
     <div class="mcat" id="barms">
-      <div class="mcat__hd"><h2>Hot barms</h2><p>Served hot in a fresh barm</p></div>
-      <div class="mrow"><span>Hot beef &amp; onion</span><span class="fill"></span><span class="p">£4.75</span></div>
+      <div class="mcat__hd"><h2>Hot barms</h2><p>Served with a pot of gravy &middot; <b>change to baton +50p</b></p></div>
+      <div class="mrow"><span>Hot beef &amp; onion</span><span class="fill"></span><span class="p">£5.25</span></div>
       <div class="mrow"><span>Hot chicken &amp; stuffing</span><span class="fill"></span><span class="p">£4.75</span></div>
       <div class="mrow"><span>Hot ham &amp; mustard</span><span class="fill"></span><span class="p">£4.75</span></div>
     </div>
 
     <div class="mcat" id="sandwiches">
-      <div class="mcat__hd"><h2>Sandwiches</h2><p>Cold, freshly made</p></div>
-      <div class="mrow"><span>Chicken, bacon &amp; mayo</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mcat__hd"><h2>Cold sandwiches</h2><p>Freshly made &middot; <b>baton +50p</b></p></div>
+      <div class="mrow"><span>Roast beef</span><span class="fill"></span><span class="p">£4.50</span></div>
       <div class="mrow"><span>Ham, cheese &amp; pickle</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mrow"><span>Chicken, bacon &amp; mayo</span><span class="fill"></span><span class="p">£4.40</span></div>
       <div class="mrow"><span>Tuna mayo</span><span class="fill"></span><span class="p">£4.00</span></div>
-      <div class="mrow"><span>Cheese savoury<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£4.00</span></div>
-      <div class="mrow"><span>Grated cheese<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£3.90</span></div>
+      <div class="mrow"><span>Savoury cheese<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£4.00</span></div>
       <div class="mrow"><span>Roast ham</span><span class="fill"></span><span class="p">£3.90</span></div>
       <div class="mrow"><span>Roast chicken</span><span class="fill"></span><span class="p">£3.90</span></div>
-      <div class="mrow"><span>Sliced salami</span><span class="fill"></span><span class="p">£3.90</span></div>
+      <div class="mrow"><span>Grated cheese<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£3.90</span></div>
       <div class="mrow"><span>Egg mayo<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£3.50</span></div>
       <div class="mrow"><span>Sliced egg<span class="tag tag--v">V</span></span><span class="fill"></span><span class="p">£3.50</span></div>
     </div>
 
     <div class="mcat" id="specials">
-      <div class="mcat__hd"><h2>Specials &amp; melts</h2><p>Butty Bros signatures</p></div>
-      <div class="mrow"><span>Italian</span><span class="fill"></span><span class="p">£6.50</span></div>
-      <div class="mrow"><span>Spanish</span><span class="fill"></span><span class="p">£6.50</span></div>
-      <div class="mrow"><span>Club</span><span class="fill"></span><span class="p">£6.50</span><span class="sub">Triple-decker — chicken, bacon and salad.</span></div>
-      <div class="mrow"><span>Spicy melt<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.50</span></div>
-      <div class="mrow"><span>Hunters toastie</span><span class="fill"></span><span class="p">£6.00</span><span class="sub">Chicken, bacon, BBQ sauce and cheese.</span></div>
-      <div class="mrow"><span>Spicy bacon toastie<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.00</span></div>
-      <div class="mrow"><span>Tuna melt</span><span class="fill"></span><span class="p">£5.50</span></div>
-      <div class="mrow"><span>BLT</span><span class="fill"></span><span class="p">£4.30</span></div>
+      <div class="mcat__hd"><h2>Butty Bros specials</h2><p>As a toastie or on a baton &middot; <b>baton +25p</b></p></div>
+      <div class="mrow"><span>Italian</span><span class="fill"></span><span class="p">£6.00</span><span class="sub">Ham, salami, mozzarella, sundried tomatoes, rocket, pesto garlic mayo.</span></div>
+      <div class="mrow"><span>Spanish</span><span class="fill"></span><span class="p">£6.00</span><span class="sub">Chicken, chorizo, cheese, roasted peppers, rocket, garlic mayo.</span></div>
+      <div class="mrow"><span>The spicy one<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.00</span><span class="sub">Chicken, salami, cheese, jalape&ntilde;os, hot chilli sauce.</span></div>
+      <div class="mrow"><span>Hunters</span><span class="fill"></span><span class="p">£6.00</span><span class="sub">Chicken, bacon, cheese, mozzarella, BBQ sauce.</span></div>
+      <div class="mrow"><span>Spicy bacon<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.00</span><span class="sub">Double bacon, cheese, mozzarella, jalape&ntilde;os, hot chilli sauce.</span></div>
+      <div class="mrow"><span>Club</span><span class="fill"></span><span class="p">£6.00</span><span class="sub">Chicken, bacon, lettuce, tomato, mayo.</span></div>
+      <div class="mrow"><span>Tuna melt</span><span class="fill"></span><span class="p">£5.50</span><span class="sub">Tuna, cheese, mozzarella, red onion.</span></div>
+      <div class="mrow"><span>BLT</span><span class="fill"></span><span class="p">£4.50</span><span class="sub">Bacon, lettuce, tomato, mayo.</span></div>
+      <div class="mrow"><span>Add chips &amp; a drink</span><span class="fill"></span><span class="p">£3.00</span></div>
+      <div class="mrow"><span>Add coleslaw</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>Add side salad</span><span class="fill"></span><span class="p">£1.00</span></div>
     </div>
 
     <div class="mcat" id="toasties">
-      <div class="mcat__hd"><h2>Toasties &amp; salad boxes</h2></div>
-      <div class="mrow"><span>Toastie — any 2 fillings</span><span class="fill"></span><span class="p">£4.75</span><span class="sub">Extra filling 50p.</span></div>
-      <div class="mrow"><span>Salad box — any filling</span><span class="fill"></span><span class="p">£6.00</span></div>
+      <div class="mcat__hd"><h2>Toasties &amp; salad boxes</h2><p>Cheese, mozzarella, ham, chicken, bacon, salami, chorizo, tuna mayo, tomatoes, onions, mushrooms, coleslaw, beans</p></div>
+      <div class="mrow"><span>Salad box</span><span class="fill"></span><span class="p">£6.00</span><span class="sub">Any sandwich filling with iceberg, rocket, tomatoes, onion, peppers, cucumber, beetroot, jalape&ntilde;os &amp; gherkins. Choice of sauce.</span></div>
+      <div class="mrow"><span>Toastie &mdash; any three fillings</span><span class="fill"></span><span class="p">£5.25</span></div>
+      <div class="mrow"><span>Toastie &mdash; any two fillings</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mrow"><span>Add coleslaw</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>Add cheese</span><span class="fill"></span><span class="p">£0.80</span></div>
     </div>
 
     <div class="mcat" id="chips">
-      <div class="mcat__hd"><h2>Chips &amp; loaded fries</h2><p>Fried golden and crisp</p></div>
-      <div class="mrow"><span>Cheese burger loaded fries</span><span class="fill"></span><span class="p">£8.50</span></div>
-      <div class="mrow"><span>Chips, chilli con carne &amp; cheese<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.25</span></div>
-      <div class="mrow"><span>Chips &amp; chicken curry</span><span class="fill"></span><span class="p">£6.25</span></div>
-      <div class="mrow"><span>Chips, cheese &amp; beans</span><span class="fill"></span><span class="p">£4.75</span></div>
-      <div class="mrow"><span>Chips, cheese &amp; gravy</span><span class="fill"></span><span class="p">£4.50</span></div>
-      <div class="mrow"><span>Salt &amp; pepper chips</span><span class="fill"></span><span class="p">£4.50</span></div>
-      <div class="mrow"><span>Cheesy chips</span><span class="fill"></span><span class="p">£4.25</span></div>
-      <div class="mrow"><span>Chips &amp; gravy</span><span class="fill"></span><span class="p">£4.00</span></div>
-      <div class="mrow"><span>Chips &amp; curry sauce</span><span class="fill"></span><span class="p">£4.00</span></div>
+      <div class="mcat__hd"><h2>Loaded fries &amp; chips</h2><p>Upgrade any to tater tots +£1.00</p></div>
+      <div class="mrow"><span>Cheese burger loaded fries</span><span class="fill"></span><span class="p">£8.00</span><span class="sub">Smashed pattie, cheese, onions, gherkins, tomato, burger sauce.</span></div>
+      <div class="mrow"><span>Chicken curry loaded fries</span><span class="fill"></span><span class="p">£7.00</span></div>
+      <div class="mrow"><span>Chilli con carne &amp; cheese<span class="tag tag--hot">Hot</span></span><span class="fill"></span><span class="p">£6.50</span></div>
+      <div class="mrow"><span>Cheese &amp; beans</span><span class="fill"></span><span class="p">£4.75</span></div>
+      <div class="mrow"><span>Salt &amp; pepper</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mrow"><span>Cheese &amp; gravy</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mrow"><span>Curry sauce</span><span class="fill"></span><span class="p">£4.50</span></div>
+      <div class="mrow"><span>Cheese</span><span class="fill"></span><span class="p">£4.25</span></div>
+      <div class="mrow"><span>Gravy</span><span class="fill"></span><span class="p">£4.00</span></div>
+      <div class="mrow"><span>Tater tots</span><span class="fill"></span><span class="p">£4.00</span></div>
       <div class="mrow"><span>Chips</span><span class="fill"></span><span class="p">£3.50</span></div>
-      <div class="mrow"><span>Chip butty</span><span class="fill"></span><span class="p">£3.50</span></div>
+    </div>
+
+    <div class="mcat" id="kids">
+      <div class="mcat__hd"><h2>Kids menu</h2><p>All served with a Fruit Shoot</p></div>
+      <div class="mrow"><span>Chicken nuggets &amp; chips</span><span class="fill"></span><span class="p">£3.75</span></div>
+      <div class="mrow"><span>Sausage &amp; chips</span><span class="fill"></span><span class="p">£3.75</span></div>
+      <div class="mrow"><span>Ham, cheese or tuna mayo butty</span><span class="fill"></span><span class="p">£3.75</span><span class="sub">Served with a bag of crisps.</span></div>
     </div>
 
     <div class="mcat" id="pies">
@@ -204,16 +256,18 @@
 
     <div class="mcat" id="drinks">
       <div class="mcat__hd"><h2>Drinks &amp; extras</h2></div>
-      <div class="mrow"><span>Chilli con carne pot</span><span class="fill"></span><span class="p">£2.50</span></div>
+      <div class="mrow"><span>Chicken nuggets x6</span><span class="fill"></span><span class="p">£3.00</span></div>
+      <div class="mrow"><span>Pot of chilli con carne</span><span class="fill"></span><span class="p">£2.50</span></div>
       <div class="mrow"><span>Coleslaw</span><span class="fill"></span><span class="p">£1.80</span></div>
-      <div class="mrow"><span>Coca-Cola / Diet Coke · 330ml</span><span class="fill"></span><span class="p">£1.50</span></div>
-      <div class="mrow"><span>Fanta orange / lemon · 330ml</span><span class="fill"></span><span class="p">£1.50</span></div>
-      <div class="mrow"><span>Irn-Bru · 330ml</span><span class="fill"></span><span class="p">£1.50</span></div>
-      <div class="mrow"><span>Curry sauce / gravy / beans</span><span class="fill"></span><span class="p">£1.50</span></div>
+      <div class="mrow"><span>Pot of curry / gravy / beans</span><span class="fill"></span><span class="p">£1.50</span></div>
+      <div class="mrow"><span>Coca-Cola / Diet Coke &middot; 330ml</span><span class="fill"></span><span class="p">£1.50</span></div>
+      <div class="mrow"><span>Fanta orange / lemon &middot; 330ml</span><span class="fill"></span><span class="p">£1.50</span></div>
+      <div class="mrow"><span>Irn-Bru &middot; 330ml</span><span class="fill"></span><span class="p">£1.50</span></div>
       <div class="mrow"><span>Kettle crisps</span><span class="fill"></span><span class="p">£1.20</span></div>
-      <div class="mrow"><span>Water · 500ml</span><span class="fill"></span><span class="p">£1.10</span></div>
-      <div class="mrow"><span>Buttered &amp; battered barm</span><span class="fill"></span><span class="p">£1.00</span></div>
-      <div class="mrow"><span>Sauces — ketchup, BBQ, garlic mayo &amp; more</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>Water &middot; 500ml</span><span class="fill"></span><span class="p">£1.10</span></div>
+      <div class="mrow"><span>Buttered baton</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>Pot of cheese</span><span class="fill"></span><span class="p">£1.00</span></div>
+      <div class="mrow"><span>Sauces &mdash; ketchup, BBQ, garlic mayo &amp; more</span><span class="fill"></span><span class="p">£1.00</span></div>
       <div class="mrow"><span>Buttered barm</span><span class="fill"></span><span class="p">£0.75</span></div>
     </div>
 
